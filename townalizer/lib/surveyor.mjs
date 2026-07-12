@@ -42,6 +42,8 @@ const WARD_LEXICON = {
   district11: 'The Old Town',
   istoletha: 'The Town Proper',
   townalizer: 'The Survey Office',
+  // Where the editor of the bulletin keeps its instructions.
+  '.claude': 'The Editor’s Room',
   scripts: 'The Utility Yard',
   bin: 'The Utility Yard',
   assets: 'The Storehouse',

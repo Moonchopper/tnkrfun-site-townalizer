@@ -1779,6 +1779,20 @@ function renderSagas(){
 
 /* The chip belongs to the visitor's own story first; the town's mood is only
    shown to people who have not yet started meddling with the Order. */
+/* The same Office can survey a different body of work; when it does, the town has
+   a different name. The masthead follows the state, not the other way round. */
+function applyTownName(){
+  const name=state.town&&state.town.name;
+  if(!name||name==='Istoletha Town')return;
+  const h1=document.querySelector('.masthead h1');
+  if(h1)h1.textContent=name;
+  document.title=name+' — Office of Remaining Affairs';
+  const rec=document.querySelector('#record>h2');
+  if(rec)rec.textContent='The Record — Bulletin of '+name;
+  const tag=document.querySelector('.masthead .tagline');
+  if(tag)tag.textContent='Surveyed by the Office of Remaining Affairs. Population zero.';
+}
+
 function applyTownStatus(){
   let touched=false;
   try{
@@ -1803,6 +1817,7 @@ function applyTownStatus(){
   }
   if(!index.dispatches||!index.dispatches.length)return;
   try{
+    applyTownName();
     renderArchive();
     await showDispatch(index.dispatches[0].date);
     renderSurvey();

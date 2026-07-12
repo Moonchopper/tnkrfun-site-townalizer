@@ -8,7 +8,7 @@
     "acquired": "2026",
     "predecessor": "District 11"
   },
-  "asOf": "2026-07-10",
+  "asOf": "2026-07-11",
   "sources": [
     {
       "source": "git",
@@ -45,6 +45,16 @@
       "lastSeen": "2026-07-10",
       "acts": 15,
       "churn": 30
+    },
+    "moonchopper": {
+      "id": "moonchopper",
+      "name": "Moonchopper",
+      "automated": false,
+      "epithet": "the Party of the Second Part",
+      "firstSeen": "2026-07-11",
+      "lastSeen": "2026-07-11",
+      "acts": 3,
+      "churn": 6817
     }
   },
   "wards": {
@@ -53,14 +63,18 @@
       "name": "The Commons",
       "note": null,
       "firstSeen": "2025-10-01",
-      "lastSeen": "2026-07-09",
-      "touches": 6,
-      "churn": 34,
+      "lastSeen": "2026-07-11",
+      "touches": 13,
+      "churn": 265,
       "buildings": [
         "README.md",
         "Dockerfile",
         ".gitmodules",
-        "compose.yaml"
+        "compose.yaml",
+        ".nojekyll",
+        "index.html",
+        ".dockerignore",
+        "deploy.sh"
       ],
       "events": [
         {
@@ -94,6 +108,30 @@
           "kind": "works",
           "title": "Add host-based routing + District 11 parking site (Office of Remaining Affairs)",
           "churn": 791
+        },
+        {
+          "date": "2026-07-11",
+          "id": "8993f2e",
+          "actor": "Moonchopper",
+          "kind": "works",
+          "title": "Istoletha Town: a town that reacts to its own git history",
+          "churn": 6776
+        },
+        {
+          "date": "2026-07-11",
+          "id": "f2aa15e",
+          "actor": "Moonchopper",
+          "kind": "works",
+          "title": "Add a root redirect so GitHub Pages lands visitors in the town",
+          "churn": 41
+        },
+        {
+          "date": "2026-07-11",
+          "id": "ea0d812",
+          "actor": "Moonchopper",
+          "kind": "works",
+          "title": "Add .nojekyll: serve the town as static files, not as a Jekyll site",
+          "churn": 0
         }
       ],
       "condition": "maintained"
@@ -276,9 +314,9 @@
       "name": "The Register",
       "note": null,
       "firstSeen": "2025-10-02",
-      "lastSeen": "2026-07-10",
-      "touches": 25,
-      "churn": 104,
+      "lastSeen": "2026-07-11",
+      "touches": 29,
+      "churn": 168,
       "buildings": [
         "manifests/tnkrfun-deployment.yaml",
         "manifests/tnkrfun-ingressroute.yaml",
@@ -461,6 +499,14 @@
           "kind": "filing",
           "title": "ci: update deployment to",
           "churn": 2
+        },
+        {
+          "date": "2026-07-11",
+          "id": "8993f2e",
+          "actor": "Moonchopper",
+          "kind": "works",
+          "title": "Istoletha Town: a town that reacts to its own git history",
+          "churn": 6776
         }
       ],
       "condition": "maintained"
@@ -468,11 +514,11 @@
     ".github": {
       "id": ".github",
       "name": "The Clerk's Office",
-      "note": null,
+      "note": "The Clerk's Office. Struck from the plan on the eleventh. The desk remains, unoccupied, as it always was.",
       "firstSeen": "2025-10-02",
-      "lastSeen": "2026-07-09",
-      "touches": 9,
-      "churn": 77,
+      "lastSeen": "2026-07-11",
+      "touches": 10,
+      "churn": 140,
       "buildings": [
         ".github/workflows/ci.yaml",
         ".github/workflow/ci.yaml"
@@ -549,6 +595,14 @@
           "kind": "works",
           "title": "Add host-based routing + District 11 parking site (Office of Remaining Affairs)",
           "churn": 791
+        },
+        {
+          "date": "2026-07-11",
+          "id": "8993f2e",
+          "actor": "Moonchopper",
+          "kind": "works",
+          "title": "Istoletha Town: a town that reacts to its own git history",
+          "churn": 6776
         }
       ],
       "condition": "maintained"
@@ -558,9 +612,9 @@
       "name": "The Hall of Records",
       "note": null,
       "firstSeen": "2025-10-03",
-      "lastSeen": "2025-10-06",
-      "touches": 23,
-      "churn": 896,
+      "lastSeen": "2026-07-11",
+      "touches": 31,
+      "churn": 1248,
       "buildings": [
         "helm/.helmignore",
         "helm/Chart.yaml",
@@ -607,18 +661,26 @@
           "kind": "repair",
           "title": "fixed helper to be DNS-1035-compliant for fullname",
           "churn": 15
+        },
+        {
+          "date": "2026-07-11",
+          "id": "8993f2e",
+          "actor": "Moonchopper",
+          "kind": "works",
+          "title": "Istoletha Town: a town that reacts to its own git history",
+          "churn": 6776
         }
       ],
-      "condition": "derelict"
+      "condition": "maintained"
     },
     "district11": {
       "id": "district11",
       "name": "The Old Town",
       "note": "The Old Town. The parcel we are standing in. The Office does not hold documents relating to the transfer.",
       "firstSeen": "2026-07-09",
-      "lastSeen": "2026-07-09",
-      "touches": 2,
-      "churn": 744,
+      "lastSeen": "2026-07-11",
+      "touches": 3,
+      "churn": 1482,
       "buildings": [
         "district11/index.html"
       ],
@@ -638,6 +700,14 @@
           "kind": "works",
           "title": "Enlarge masthead seal so the ring text is readable",
           "churn": 7
+        },
+        {
+          "date": "2026-07-11",
+          "id": "8993f2e",
+          "actor": "Moonchopper",
+          "kind": "works",
+          "title": "Istoletha Town: a town that reacts to its own git history",
+          "churn": 6776
         }
       ],
       "condition": "maintained"
@@ -647,9 +717,9 @@
       "name": "The Waterworks",
       "note": null,
       "firstSeen": "2026-07-09",
-      "lastSeen": "2026-07-09",
-      "touches": 1,
-      "churn": 31,
+      "lastSeen": "2026-07-11",
+      "touches": 2,
+      "churn": 56,
       "buildings": [
         "nginx/default.conf"
       ],
@@ -661,6 +731,102 @@
           "kind": "works",
           "title": "Add host-based routing + District 11 parking site (Office of Remaining Affairs)",
           "churn": 791
+        },
+        {
+          "date": "2026-07-11",
+          "id": "8993f2e",
+          "actor": "Moonchopper",
+          "kind": "works",
+          "title": "Istoletha Town: a town that reacts to its own git history",
+          "churn": 6776
+        }
+      ],
+      "condition": "maintained"
+    },
+    "istoletha": {
+      "id": "istoletha",
+      "name": "The Town Proper",
+      "note": null,
+      "firstSeen": "2026-07-11",
+      "lastSeen": "2026-07-11",
+      "touches": 13,
+      "churn": 3751,
+      "buildings": [
+        "istoletha/data/dispatches/2025-10-01.json",
+        "istoletha/data/dispatches/2025-10-02.json",
+        "istoletha/data/dispatches/2025-10-03.json",
+        "istoletha/data/dispatches/2025-10-06.json",
+        "istoletha/data/dispatches/2026-04-02.json",
+        "istoletha/data/dispatches/2026-04-03.json",
+        "istoletha/data/dispatches/2026-04-19.json",
+        "istoletha/data/dispatches/2026-05-05.json",
+        "istoletha/data/dispatches/2026-07-09.json",
+        "istoletha/data/dispatches/2026-07-10.json",
+        "istoletha/data/dispatches/index.json",
+        "istoletha/data/town-state.json",
+        "istoletha/index.html"
+      ],
+      "events": [
+        {
+          "date": "2026-07-11",
+          "id": "8993f2e",
+          "actor": "Moonchopper",
+          "kind": "works",
+          "title": "Istoletha Town: a town that reacts to its own git history",
+          "churn": 6776
+        }
+      ],
+      "condition": "maintained"
+    },
+    "townalizer": {
+      "id": "townalizer",
+      "name": "The Survey Office",
+      "note": "The Survey Office. Everything you are reading was made here.",
+      "firstSeen": "2026-07-11",
+      "lastSeen": "2026-07-11",
+      "touches": 8,
+      "churn": 1395,
+      "buildings": [
+        "townalizer/cli.mjs",
+        "townalizer/lib/state.mjs",
+        "townalizer/lib/surveyor.mjs",
+        "townalizer/lib/validate.mjs",
+        "townalizer/sources/git.mjs",
+        "townalizer/sources/index.mjs",
+        "townalizer/sources/journal.mjs",
+        "townalizer/townalizer.config.json"
+      ],
+      "events": [
+        {
+          "date": "2026-07-11",
+          "id": "8993f2e",
+          "actor": "Moonchopper",
+          "kind": "works",
+          "title": "Istoletha Town: a town that reacts to its own git history",
+          "churn": 6776
+        }
+      ],
+      "condition": "maintained"
+    },
+    ".claude": {
+      "id": ".claude",
+      "name": "The Editor’s Room",
+      "note": null,
+      "firstSeen": "2026-07-11",
+      "lastSeen": "2026-07-11",
+      "touches": 1,
+      "churn": 198,
+      "buildings": [
+        ".claude/skills/dispatch/SKILL.md"
+      ],
+      "events": [
+        {
+          "date": "2026-07-11",
+          "id": "8993f2e",
+          "actor": "Moonchopper",
+          "kind": "works",
+          "title": "Istoletha Town: a town that reacts to its own git history",
+          "churn": 6776
         }
       ],
       "condition": "maintained"
@@ -730,6 +896,30 @@
       "note": "Raised in one evening to administer a district dissolved in 1994. It is still standing. It is still staffed.",
       "raisedOn": "2026-07-09",
       "origin": "4c88722"
+    },
+    {
+      "id": "the-survey-office",
+      "name": "The Survey Office",
+      "ward": "townalizer",
+      "note": "Reads the town's own history and renders it as news. It produced the notice announcing itself.",
+      "raisedOn": "2026-07-11",
+      "origin": "8993f2e"
+    },
+    {
+      "id": "the-editor-s-room",
+      "name": "The Editor's Room",
+      "ward": ".claude",
+      "note": "Adjoining the Survey Office. The instructions kept here are not shown to visitors, and would not help them.",
+      "raisedOn": "2026-07-11",
+      "origin": "8993f2e"
+    },
+    {
+      "id": "the-boundary-sign",
+      "name": "The Boundary Sign",
+      "ward": "(root)",
+      "note": "Directs those who have arrived at the wrong desk. Insists it is no fault of their own.",
+      "raisedOn": "2026-07-11",
+      "origin": "f2aa15e"
     }
   ],
   "sagas": [
@@ -755,9 +945,9 @@
     {
       "id": "the-clerks-litany",
       "title": "The Clerk's Litany",
-      "status": "ongoing",
+      "status": "resolved",
       "openedOn": "2025-10-03",
-      "lastBeat": "2026-07-10",
+      "lastBeat": "2026-07-11",
       "beats": [
         {
           "date": "2025-10-03",
@@ -783,6 +973,11 @@
           "date": "2026-07-10",
           "text": "Filed twice. There was nothing to file about. It filed anyway, and it filed correctly.",
           "origin": "cdf3000"
+        },
+        {
+          "date": "2026-07-11",
+          "text": "The Clerk's office was struck from the plan. Fifteen filings stand in the Register. They will not be added to. The matter is closed. The Clerk was not informed.",
+          "origin": "8993f2e"
         }
       ]
     },
@@ -824,22 +1019,41 @@
       "title": "The Old Town",
       "status": "ongoing",
       "openedOn": "2026-07-09",
-      "lastBeat": "2026-07-09",
+      "lastBeat": "2026-07-11",
       "beats": [
         {
           "date": "2026-07-09",
           "text": "An office was raised for a district dissolved in 1994. It is the finest building in the town, and it administers nothing.",
           "origin": "4c88722"
+        },
+        {
+          "date": "2026-07-11",
+          "text": "The Old Town, and the parcel beneath it, passed to another party in the night. The Office of Remaining Affairs remains, and remains staffed.",
+          "origin": "8993f2e"
+        }
+      ]
+    },
+    {
+      "id": "the-acquisition",
+      "title": "The Acquisition",
+      "status": "ongoing",
+      "openedOn": "2026-07-11",
+      "lastBeat": "2026-07-11",
+      "beats": [
+        {
+          "date": "2026-07-11",
+          "text": "A party took the parcel, the address, and the seal. No document was produced. None was requested.",
+          "origin": "8993f2e"
         }
       ]
     }
   ],
   "civic": {
-    "status": "DIMINISHED",
-    "statusNote": "The town's most recent news is a machine, filing correctly, to no one.",
-    "souls": 2,
-    "actsRecorded": 53,
-    "churnRecorded": 22488,
+    "status": "ELEVATED",
+    "statusNote": "The town has never been busier. The Clerk has not filed. The Clerk will not file again.",
+    "souls": 3,
+    "actsRecorded": 56,
+    "churnRecorded": 29305,
     "longestSilence": 178
   },
   "ledger": {
@@ -853,8 +1067,9 @@
       "2026-04-19",
       "2026-05-05",
       "2026-07-09",
-      "2026-07-10"
+      "2026-07-10",
+      "2026-07-11"
     ],
-    "lastRecordId": "cdf3000d8e4ed3b0d7cefa953f7b28a304bf01a0"
+    "lastRecordId": "ea0d812804158b75b874a4eabe06b2de1f807995"
   }
 }

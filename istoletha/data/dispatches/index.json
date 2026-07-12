@@ -1,7 +1,16 @@
 {
   "version": 1,
-  "count": 10,
+  "count": 11,
   "dispatches": [
+    {
+      "date": "2026-07-11",
+      "issue": 11,
+      "headline": "The Parcel Changes Hands. The Clerk Is Not Informed.",
+      "standfirst": "A party arrives in the night, takes the parcel, renames the town, and raises a Survey Office before morning. The Clerk's office is struck from the plan. Its last filing stands.",
+      "notices": 4,
+      "records": 3,
+      "churn": 6817
+    },
     {
       "date": "2026-07-10",
       "issue": 10,

@@ -26,8 +26,8 @@ const CONFIG_FILE = path.join(ROOT, 'townalizer', 'townalizer.config.json');
 const DEFAULTS = {
   source: 'git',
   cwd: '.',
-  stateFile: 'district11/data/town-state.json',
-  dispatchDir: 'district11/data/dispatches',
+  stateFile: 'istoletha/data/town-state.json',
+  dispatchDir: 'istoletha/data/dispatches',
 };
 
 /* ── plumbing ─────────────────────────────────────────────────────────────── */
@@ -55,6 +55,18 @@ async function loadConfig(flags) {
   }
   if (flags.source) cfg.source = flags.source;
   if (flags.repo) cfg.cwd = flags.repo;
+
+  // --town gives a body of work its own town: its own state, its own back issues.
+  // Without it you get the built-in one, whose history is this repository.
+  if (flags.town) {
+    cfg.stateFile = `towns/${flags.town}/town-state.json`;
+    cfg.dispatchDir = `towns/${flags.town}/dispatches`;
+    cfg.townName = flags.name || flags.town;
+  }
+  if (flags.name) cfg.townName = flags.name;
+  if (flags.state) cfg.stateFile = flags.state;
+  if (flags.dispatches) cfg.dispatchDir = flags.dispatches;
+
   return {
     ...cfg,
     cwd: path.resolve(ROOT, cfg.cwd),
@@ -183,7 +195,7 @@ async function replay(cfg) {
   const src = getSource(cfg.source);
   const dispatches = await readDispatches(cfg.dispatchDir);
   if (dispatches.length === 0) {
-    return { state: emptyState(), dispatches, meta: { repo: path.basename(cfg.cwd) } };
+    return { state: emptyState(cfg.townName), dispatches, meta: { repo: path.basename(cfg.cwd) } };
   }
 
   const earliest = dispatches[0].date;
@@ -191,7 +203,7 @@ async function replay(cfg) {
   const days = byDay(records);
   const allDays = await src.activeDays({ cwd: cfg.cwd });
 
-  let state = emptyState();
+  let state = emptyState(cfg.townName);
   state.sources = [{ source: cfg.source, repo: meta.repo }];
 
   const refreshed = [];
@@ -436,6 +448,16 @@ const USAGE = `townalizer — a town that reacts to a history of work
 Options:
   --source <id>   ${listSources().map((s) => s.id).join(' | ')}   (default: git)
   --repo <path>   history to read (default: this repository)
+  --town <slug>   give that history its own town: towns/<slug>/ holds its state
+                  and its back issues, separate from every other town
+  --name "Name"   what that town calls itself (default: the slug)
+
+  A town is one body of work. Point --repo at a project and --town at a name for
+  it, and the same Office will survey it, in the same voice, keeping its own map.
+
+    node townalizer/cli.mjs days    --repo ../my-app --town my-app
+    node townalizer/cli.mjs dossier --repo ../my-app --town my-app --date 2026-07-11
+    node townalizer/cli.mjs bundle  --town my-app --out my-app-town.html
 `;
 
 async function main() {

@@ -21,11 +21,13 @@ import { wardNameFor } from './surveyor.mjs';
 
 export const STATE_VERSION = 1;
 
-export function emptyState() {
+export function emptyState(name) {
   return {
     version: STATE_VERSION,
     town: {
-      name: 'Istoletha Town',
+      // The same Office, surveying a different body of work. Give a town its own
+      // name with --name; it will still be run by Gerald, who does not transfer.
+      name: name || 'Istoletha Town',
       motto: 'Adhuc Hic',
       // The dates belong to District 11. We kept them. We kept everything.
       established: '1952',

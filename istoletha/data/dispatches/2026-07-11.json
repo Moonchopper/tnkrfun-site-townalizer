@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "date": "2026-07-11",
+  "issue": 11,
+  "headline": "The Parcel Changes Hands. The Clerk Is Not Informed.",
+  "standfirst": "A party arrives in the night, takes the parcel, renames the town, and raises a Survey Office before morning. The Clerk's office is struck from the plan. Its last filing stands.",
+  "notices": [
+    {
+      "no": "11-076",
+      "title": "The Acquisition",
+      "body": "The parcel formerly designated District 11, together with its address, its seal, and the Office standing upon it, has passed to a party recorded in our books as Moonchopper. The Office declines to characterise the circumstances of the transfer. No document evidencing it has been produced, and none has been requested. The town has been renamed. The seal has not, a new seal requiring Form S-2, and Form S-2 requiring a district. Gerald has been retained. Gerald was not consulted. Gerald has not raised it.",
+      "origin": "8993f2e",
+      "truth": {
+        "id": "8993f2e",
+        "actor": "Moonchopper",
+        "title": "Istoletha Town: a town that reacts to its own git history",
+        "kind": "works",
+        "churn": 6776,
+        "files": 42,
+        "wards": [
+          ".claude",
+          "(root)",
+          ".github",
+          "district11",
+          "helm",
+          "istoletha",
+          "manifests",
+          "nginx",
+          "townalizer"
+        ],
+        "timestamp": "2026-07-11T21:26:18-04:00"
+      }
+    },
+    {
+      "no": "11-077",
+      "title": "Decommissioning of the Clerk",
+      "body": "The Clerk's office has been struck from the plan. The Clerk filed its final notice on the tenth, in duplicate, correctly, as it had filed every notice before it. It was not told that the notice would be its last. It could not have been told. It would not have minded, and it would have filed anyway, which the Office wishes to record is not the same thing as not minding. Fifteen filings stand in the Register. They will not be added to.",
+      "origin": "8993f2e",
+      "truth": {
+        "id": "8993f2e",
+        "actor": "Moonchopper",
+        "title": "Istoletha Town: a town that reacts to its own git history",
+        "kind": "works",
+        "churn": 6776,
+        "files": 42,
+        "wards": [
+          ".claude",
+          "(root)",
+          ".github",
+          "district11",
+          "helm",
+          "istoletha",
+          "manifests",
+          "nginx",
+          "townalizer"
+        ],
+        "timestamp": "2026-07-11T21:26:18-04:00"
+      }
+    },
+    {
+      "no": "11-078",
+      "title": "The Survey Office",
+      "body": "A Survey Office has been raised upon the parcel, together with an Editor's Room adjoining it. The instrument installed there reads the town's own history and renders it as news. The present notice was produced by that instrument, and concerns, among other things, the raising of the instrument. The Office has considered whether this is proper and has determined that the question is outside its competence, along with most questions.",
+      "origin": "8993f2e",
+      "truth": {
+        "id": "8993f2e",
+        "actor": "Moonchopper",
+        "title": "Istoletha Town: a town that reacts to its own git history",
+        "kind": "works",
+        "churn": 6776,
+        "files": 42,
+        "wards": [
+          ".claude",
+          "(root)",
+          ".github",
+          "district11",
+          "helm",
+          "istoletha",
+          "manifests",
+          "nginx",
+          "townalizer"
+        ],
+        "timestamp": "2026-07-11T21:26:18-04:00"
+      }
+    },
+    {
+      "no": "11-079",
+      "title": "Notice of Redirection",
+      "body": "A sign has been erected at the boundary, directing visitors who have arrived at the wrong desk toward the town. It reads, in part, that this reflects no fault of their own. The Office wishes to make clear that it means this.",
+      "origin": "f2aa15e",
+      "truth": {
+        "id": "f2aa15e",
+        "actor": "Moonchopper",
+        "title": "Add a root redirect so GitHub Pages lands visitors in the town",
+        "kind": "works",
+        "churn": 41,
+        "files": 1,
+        "wards": [
+          "(root)"
+        ],
+        "timestamp": "2026-07-11T21:27:02-04:00"
+      }
+    }
+  ],
+  "ticker": [
+    "The parcel has changed hands. The Office declines to characterise the circumstances.",
+    "The town has been renamed. The seal has not.",
+    "The Clerk's office has been struck from the plan.",
+    "The Clerk filed on the tenth. The Clerk will not file again.",
+    "A Survey Office has been raised. It produced this notice.",
+    "Gerald has been retained."
+  ],
+  "minute": {
+    "session": "424th Ordinary Session — Tuesday",
+    "text": "Agenda item 1: the transfer of the parcel. Received. No motion was moved, there being no procedure for it and no one to object. Agenda item 2: the Clerk. It was moved that the Office record its thanks. It was observed that the Clerk cannot receive thanks, has never been able to receive thanks, and did not at any point request them. The motion was carried 1–0 (Gerald), and the Chair asked that it be minuted that the vote was unanimous, which it was, there being one of him."
+  },
+  "gerald": "They struck the Clerk's office on the plan this evening. It filed yesterday. It filed correctly. Nobody told it, because there was nobody to tell, and I have read its last notice four times now and it says exactly what it always said.",
+  "stateChanges": {
+    "status": "ELEVATED",
+    "statusNote": "The town has never been busier. The Clerk has not filed. The Clerk will not file again.",
+    "landmarks": [
+      {
+        "name": "The Survey Office",
+        "ward": "townalizer",
+        "note": "Reads the town's own history and renders it as news. It produced the notice announcing itself.",
+        "origin": "8993f2e"
+      },
+      {
+        "name": "The Editor's Room",
+        "ward": ".claude",
+        "note": "Adjoining the Survey Office. The instructions kept here are not shown to visitors, and would not help them.",
+        "origin": "8993f2e"
+      },
+      {
+        "name": "The Boundary Sign",
+        "ward": "(root)",
+        "note": "Directs those who have arrived at the wrong desk. Insists it is no fault of their own.",
+        "origin": "f2aa15e"
+      }
+    ],
+    "sagas": [
+      {
+        "id": "the-clerks-litany",
+        "status": "resolved",
+        "beat": {
+          "text": "The Clerk's office was struck from the plan. Fifteen filings stand in the Register. They will not be added to. The matter is closed. The Clerk was not informed.",
+          "origin": "8993f2e"
+        }
+      },
+      {
+        "id": "the-old-town",
+        "beat": {
+          "text": "The Old Town, and the parcel beneath it, passed to another party in the night. The Office of Remaining Affairs remains, and remains staffed.",
+          "origin": "8993f2e"
+        }
+      },
+      {
+        "id": "the-acquisition",
+        "title": "The Acquisition",
+        "beat": {
+          "text": "A party took the parcel, the address, and the seal. No document was produced. None was requested.",
+          "origin": "8993f2e"
+        }
+      }
+    ],
+    "epithets": {
+      "moonchopper": "the Party of the Second Part"
+    },
+    "wardNotes": {
+      "townalizer": "The Survey Office. Everything you are reading was made here.",
+      ".github": "The Clerk's Office. Struck from the plan on the eleventh. The desk remains, unoccupied, as it always was."
+    }
+  },
+  "provenance": {
+    "source": "git",
+    "repo": "tnkrfun-site-townalizer",
+    "records": 3,
+    "churn": 6817,
+    "generatedAt": null,
+    "editor": "claude"
+  }
+}
