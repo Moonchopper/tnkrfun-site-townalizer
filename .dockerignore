@@ -1,0 +1,9 @@
+# The image only needs nginx/, site/, and istoletha/. Everything else is build context
+# we pay to upload and never use.
+.git
+.github
+.claude
+townalizer
+README.md
+compose.yaml
+.dockerignore

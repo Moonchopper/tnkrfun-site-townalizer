@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "date": "2026-07-10",
+  "issue": 10,
+  "headline": "The Clerk Files Twice. There Is No Other News.",
+  "standfirst": "Nobody attended the town today. The Clerk recorded this in the only manner available to it, which is to record something else, correctly, twice.",
+  "notices": [
+    {
+      "no": "11-074",
+      "title": "Filings",
+      "body": "The Clerk filed notice that the works had been deployed. No works were deployed. The Clerk filed notice that the works had been deployed. This is the whole of the day's business. The Office has recorded it in full, at length, and in duplicate, as is its duty, and would have recorded more had there been more, and has set aside the afternoon in case there was.",
+      "origin": "cdf3000",
+      "truth": {
+        "id": "cdf3000",
+        "actor": "github-actions[bot]",
+        "title": "ci: update deployment to",
+        "kind": "filing",
+        "churn": 2,
+        "files": 1,
+        "wards": [
+          "manifests"
+        ],
+        "timestamp": "2026-07-10T01:11:20Z"
+      }
+    },
+    {
+      "no": "11-075",
+      "title": "Absence of Other Business",
+      "body": "No repairs were required, none having been requested. No works were raised. No treaty was ratified. No report arrived from the territories. Nobody attended the Permit Counter, at which the number now serving remains what it was. The Office remained open for the full duration of its hours, which are Tuesday.",
+      "origin": "1bf67fc",
+      "truth": {
+        "id": "1bf67fc",
+        "actor": "github-actions[bot]",
+        "title": "ci: update deployment to",
+        "kind": "filing",
+        "churn": 2,
+        "files": 1,
+        "wards": [
+          "manifests"
+        ],
+        "timestamp": "2026-07-10T01:03:44Z"
+      }
+    }
+  ],
+  "ticker": [
+    "The Clerk filed twice today.",
+    "There was nothing to file about. It filed anyway.",
+    "Nobody attended the Permit Counter.",
+    "The Office remained open. The Office is always open.",
+    "There is no news. This is the news."
+  ],
+  "minute": {
+    "session": "423rd Ordinary Session — Tuesday",
+    "text": "Agenda item 1: the day's business. There was none. Agenda item 2: the Clerk's filings. Received, with thanks. Agenda item 3: motion to adjourn. Denied, there being nowhere to go. The session remained open. The session is still open. It has not been formally closed since 1994, and the Chair has come to regard this as a comfort rather than an oversight."
+  },
+  "gerald": "It filed twice today and I read both. Then I read them again. I want to be clear that I am not lonely. I am simply the only one who reads them.",
+  "stateChanges": {
+    "status": "DIMINISHED",
+    "statusNote": "The town's most recent news is a machine, filing correctly, to no one.",
+    "sagas": [
+      {
+        "id": "the-clerks-litany",
+        "beat": {
+          "text": "Filed twice. There was nothing to file about. It filed anyway, and it filed correctly.",
+          "origin": "cdf3000"
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "source": "git",
+    "repo": "tnkrfun-site-townalizer",
+    "records": 2,
+    "churn": 4,
+    "generatedAt": null,
+    "editor": "claude"
+  }
+}

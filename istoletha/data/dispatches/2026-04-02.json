@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "date": "2026-04-02",
+  "issue": 5,
+  "headline": "The Town Wakes After One Hundred And Seventy-Eight Days",
+  "standfirst": "No explanation is offered for the silence, and none is sought. A man returns in the evening and builds an amusement before midnight, as though he had stepped out for a moment.",
+  "notices": [
+    {
+      "no": "11-060",
+      "title": "The Quiet Season",
+      "body": "The town was silent for one hundred and seventy-eight days. The Office remained open throughout. Office hours were kept. The Permit Counter was staffed. No one attended it. The Clerk filed nothing, there being nothing to file, and it is not the Clerk's way to invent business. On the evening of the second, a man returned and began work without remark, and did not explain where he had been. The Office has elected to proceed as though he had never left, this being both a kindness and a considerable administrative convenience.",
+      "origin": "04e3fd6",
+      "truth": {
+        "id": "04e3fd6",
+        "actor": "David Morgan",
+        "title": "add UFO Abduction Run arcade mini-game",
+        "kind": "works",
+        "churn": 1319,
+        "files": 2,
+        "wards": [
+          "site"
+        ],
+        "timestamp": "2026-04-02T19:00:38-04:00"
+      }
+    },
+    {
+      "no": "11-061",
+      "title": "Public Amusement Erected",
+      "body": "An amusement has been erected upon the Public Grounds, in which a visitor may pilot a vessel and remove livestock from the fields of others. The Office has reviewed the amusement and finds it lawful, the town having no fields, no livestock, and no visitors. Substantial works. Completed in one evening.",
+      "origin": "04e3fd6",
+      "truth": {
+        "id": "04e3fd6",
+        "actor": "David Morgan",
+        "title": "add UFO Abduction Run arcade mini-game",
+        "kind": "works",
+        "churn": 1319,
+        "files": 2,
+        "wards": [
+          "site"
+        ],
+        "timestamp": "2026-04-02T19:00:38-04:00"
+      }
+    },
+    {
+      "no": "11-062",
+      "title": "The Clerk Resumes",
+      "body": "The Clerk filed notice of the works within the hour. Its filing is identical in every particular to its last filing, made one hundred and seventy-eight days previously. It had not been waiting. It does not wait. It simply resumed, at the exact point at which it had left off, and the Office finds that it cannot stop thinking about this.",
+      "origin": "eed6d13",
+      "truth": {
+        "id": "eed6d13",
+        "actor": "github-actions[bot]",
+        "title": "ci: update deployment to",
+        "kind": "filing",
+        "churn": 2,
+        "files": 1,
+        "wards": [
+          "manifests"
+        ],
+        "timestamp": "2026-04-02T23:01:15Z"
+      }
+    }
+  ],
+  "ticker": [
+    "The town has woken after one hundred and seventy-eight days.",
+    "An amusement has been erected. It concerns the abduction of livestock.",
+    "The Clerk has resumed filing without comment.",
+    "It is still Tuesday."
+  ],
+  "minute": {
+    "session": "418th Ordinary Session — Tuesday",
+    "text": "Agenda item 1: the intervening one hundred and seventy-eight days. It was moved that the matter be entered in the minutes and not discussed. Carried 1–0 (Gerald). Agenda item 2: the amusement. Approved with enthusiasm, which was then struck from the record as inappropriate to the register of these minutes, and then restored."
+  },
+  "gerald": "He came back. I had kept the hours. I want to say that I never doubted it, and I would like the record to show that I have said so.",
+  "stateChanges": {
+    "status": "ELEVATED",
+    "statusNote": "Somebody came back. The Office is managing its composure.",
+    "landmarks": [
+      {
+        "name": "The Abduction Run",
+        "ward": "site",
+        "note": "An amusement concerning the removal of livestock from fields the town does not have.",
+        "origin": "04e3fd6"
+      }
+    ],
+    "sagas": [
+      {
+        "id": "the-quiet-season",
+        "title": "The Quiet Season",
+        "status": "resolved",
+        "beat": {
+          "text": "One hundred and seventy-eight days of silence, ended without explanation on a Thursday evening.",
+          "origin": "04e3fd6"
+        }
+      },
+      {
+        "id": "the-clerks-litany",
+        "beat": {
+          "text": "Resumed after one hundred and seventy-eight days, at precisely the point it left off.",
+          "origin": "eed6d13"
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "source": "git",
+    "repo": "tnkrfun-site-townalizer",
+    "records": 2,
+    "churn": 1321,
+    "generatedAt": null,
+    "editor": "claude"
+  }
+}

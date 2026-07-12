@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "date": "2026-04-03",
+  "issue": 6,
+  "headline": "Six Works Raised In A Single Day; The Clerk Files Six Notices",
+  "standfirst": "A breeding yard, a nursery, a training ground, and a market are raised upon the Public Grounds. The Clerk records each one. The Clerk records nothing else, and asks for nothing.",
+  "notices": [
+    {
+      "no": "11-063",
+      "title": "Public Works — The Breeder's Yard",
+      "body": "A yard for the breeding and exhibition of horses has been raised upon the Public Grounds, complete with a stable, and with an engine for determining the character of each animal in advance of its birth. The works are the largest single undertaking in the history of the ledger. They were begun in the evening and were not finished until the small hours. The Office does not comment on the private arrangements of its contractors, and would not know how to begin.",
+      "origin": "ce7cf7c",
+      "truth": {
+        "id": "ce7cf7c",
+        "actor": "David Morgan",
+        "title": "add Horse Breeder game — Phase 1: genetics engine, SVG horse, stable UI",
+        "kind": "works",
+        "churn": 1776,
+        "files": 4,
+        "wards": [
+          "site"
+        ],
+        "timestamp": "2026-04-03T00:18:09-04:00"
+      }
+    },
+    {
+      "no": "11-064",
+      "title": "Public Works — The Market and the Training Ground",
+      "body": "A market has been opened at which buyers may state their requirements and be matched against the available stock. A training ground has been laid out beside it, at which the stock may be improved before sale. Both were completed the same day they were begun. The town has no buyers and no stock. The market keeps its hours. The Office finds this entirely proper and has recorded it without further remark.",
+      "origin": "a3bf7a5",
+      "truth": {
+        "id": "a3bf7a5",
+        "actor": "David Morgan",
+        "title": "add Phase 5: market with buyer requests, matching, and sales",
+        "kind": "works",
+        "churn": 351,
+        "files": 1,
+        "wards": [
+          "site"
+        ],
+        "timestamp": "2026-04-03T02:14:47-04:00"
+      }
+    },
+    {
+      "no": "11-065",
+      "title": "The Clerk's Litany",
+      "body": "The Clerk filed notice of the works. The Clerk then filed notice of the works. The Clerk filed notice of the works on four further occasions, at intervals of its own choosing, throughout the day and into the night. Each filing was correct. Each filing was identical. Each filing was made without hesitation and without any indication that the Clerk had noticed the resemblance. The Office has no objection and no explanation, and has stopped seeking one.",
+      "origin": "45967b5",
+      "truth": {
+        "id": "45967b5",
+        "actor": "github-actions[bot]",
+        "title": "ci: update deployment to",
+        "kind": "filing",
+        "churn": 2,
+        "files": 1,
+        "wards": [
+          "manifests"
+        ],
+        "timestamp": "2026-04-03T13:01:51Z"
+      }
+    }
+  ],
+  "ticker": [
+    "Six works raised on the Public Grounds in one day.",
+    "The Clerk has filed six notices, each identical, each correct.",
+    "The market is open. There are no buyers. The market is open.",
+    "Attendance at the Breeder's Yard was strong (0)."
+  ],
+  "minute": {
+    "session": "419th Ordinary Session — Tuesday",
+    "text": "Agenda item 1: commendation of the works. Carried 1–0 (Gerald). Agenda item 2: commendation of the Clerk. Carried 1–0. It was noted that the Clerk cannot receive a commendation. It was further noted that this had not previously stopped the Office, and would not now."
+  },
+  "gerald": "It filed six times today. I read all six. I would like to record that they were not the same, to me, and that I could not tell you what the difference was.",
+  "stateChanges": {
+    "status": "BUSY",
+    "statusNote": "Six works in a day. The Office has had to buy a second folder.",
+    "landmarks": [
+      {
+        "name": "The Breeder's Yard",
+        "ward": "site",
+        "note": "The largest single undertaking in the ledger. Built between dusk and the small hours.",
+        "origin": "ce7cf7c"
+      }
+    ],
+    "sagas": [
+      {
+        "id": "the-clerks-litany",
+        "beat": {
+          "text": "Filed six times in one day. Did not vary. Did not tire. Did not comment.",
+          "origin": "45967b5"
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "source": "git",
+    "repo": "tnkrfun-site-townalizer",
+    "records": 12,
+    "churn": 4027,
+    "generatedAt": null,
+    "editor": "claude"
+  }
+}
