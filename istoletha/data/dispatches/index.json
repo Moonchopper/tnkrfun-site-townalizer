@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "count": 10,
+  "dispatches": [
+    {
+      "date": "2026-07-10",
+      "issue": 10,
+      "headline": "The Clerk Files Twice. There Is No Other News.",
+      "standfirst": "Nobody attended the town today. The Clerk recorded this in the only manner available to it, which is to record something else, correctly, twice.",
+      "notices": 2,
+      "records": 2,
+      "churn": 4
+    },
+    {
+      "date": "2026-07-09",
+      "issue": 9,
+      "headline": "An Office Is Raised For A District That Does Not Exist",
+      "standfirst": "After sixty-one days of silence, six structures appear in a quarter the ledger has not previously acknowledged. They are dedicated to the administration of a district dissolved in 1994.",
+      "notices": 3,
+      "records": 3,
+      "churn": 798
+    },
+    {
+      "date": "2026-05-05",
+      "issue": 8,
+      "headline": "The Territories Report; The Clerk Answers Each In Turn",
+      "standfirst": "Four dispatches arrive from the annexed territory of Tinker Tides. Four notices are filed in reply. Sixteen units of material change hands in the whole of the day.",
+      "notices": 2,
+      "records": 8,
+      "churn": 16
+    },
+    {
+      "date": "2026-04-19",
+      "issue": 7,
+      "headline": "Fourteen Structures Demolished; Three Territories Annexed The Same Afternoon",
+      "standfirst": "The whole of the amusements quarter is levelled. Its occupants are not rehoused. They are annexed, which the Office has been assured is a different thing.",
+      "notices": 3,
+      "records": 4,
+      "churn": 14920
+    },
+    {
+      "date": "2026-04-03",
+      "issue": 6,
+      "headline": "Six Works Raised In A Single Day; The Clerk Files Six Notices",
+      "standfirst": "A breeding yard, a nursery, a training ground, and a market are raised upon the Public Grounds. The Clerk records each one. The Clerk records nothing else, and asks for nothing.",
+      "notices": 3,
+      "records": 12,
+      "churn": 4027
+    },
+    {
+      "date": "2026-04-02",
+      "issue": 5,
+      "headline": "The Town Wakes After One Hundred And Seventy-Eight Days",
+      "standfirst": "No explanation is offered for the silence, and none is sought. A man returns in the evening and builds an amusement before midnight, as though he had stepped out for a moment.",
+      "notices": 3,
+      "records": 2,
+      "churn": 1321
+    },
+    {
+      "date": "2025-10-06",
+      "issue": 4,
+      "headline": "The Hall of Records Is Completed. The Town Then Stops.",
+      "standfirst": "Three acts of maintenance are recorded, in good order, by a man who locks up at nine and does not say anything. Nothing about the day indicates what follows it.",
+      "notices": 2,
+      "records": 3,
+      "churn": 357
+    },
+    {
+      "date": "2025-10-03",
+      "issue": 3,
+      "headline": "A Clerk Is Appointed. It Files Twice. It Says Nothing.",
+      "standfirst": "The Hall of Records is enlarged. A treaty is ratified between the town and the town. An officer begins work that will not conclude.",
+      "notices": 3,
+      "records": 11,
+      "churn": 592
+    },
+    {
+      "date": "2025-10-02",
+      "issue": 2,
+      "headline": "Public Grounds Laid Out; The Town's Address Is Changed Four Times Before Dawn",
+      "standfirst": "Seventeen structures are raised in a single evening by one man working alone. He then spends eighty minutes deciding where the town lives, and arrives back where he began.",
+      "notices": 3,
+      "records": 7,
+      "churn": 452
+    },
+    {
+      "date": "2025-10-01",
+      "issue": 1,
+      "headline": "The Ledger Is Opened; It Contains One Line",
+      "standfirst": "A single document is deposited upon the parcel. It describes what is intended here. Nothing is undertaken. The Office files the document and waits, which is the work.",
+      "notices": 2,
+      "records": 1,
+      "churn": 1
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "source": "git",
+  "cwd": ".",
+  "stateFile": "istoletha/data/town-state.json",
+  "dispatchDir": "istoletha/data/dispatches"
+}

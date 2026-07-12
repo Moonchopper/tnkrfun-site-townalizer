@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Istoletha Town — Office of Remaining Affairs</title>
+<meta name="description" content="The official website of Istoletha Town, which occupies the parcel formerly known as District 11 (dissolved 1994, clerical). Maintained continuously by Gerald. It is always Tuesday here.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%231f3a5f'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23b8912f' stroke-width='1.5'/%3E%3Ctext x='16' y='21' font-size='13' font-family='Georgia,serif' fill='%23f2efe6' text-anchor='middle'%3E11%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --paper:#f2efe6; --panel:#faf8f1; --ink:#26251f; --navy:#1f3a5f;
+  --navy-deep:#16293f; --rule:#c9c3b0; --gold:#b8912f; --red:#b3252c;
+  --green:#1e6b3a; --amber:#b06a00; --muted:#6d6a5e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font:13px/1.65 Verdana,Geneva,sans-serif;
+}
+/* faint paper grain, pure CSS */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:
+    repeating-linear-gradient(0deg,transparent 0 2px,rgba(31,58,95,.012) 2px 4px),
+    repeating-linear-gradient(90deg,transparent 0 3px,rgba(38,37,31,.01) 3px 6px);
+}
+a{color:#274a7e}
+a:focus-visible,button:focus-visible,input:focus-visible,
+[tabindex]:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.container{max-width:860px;margin:0 auto;padding:0 16px;position:relative;z-index:1}
+
+/* ── Masthead ─────────────────────────────── */
+header.gov{
+  background:linear-gradient(var(--navy),var(--navy-deep));
+  color:var(--paper); border-bottom:3px solid var(--gold);
+}
+.masthead{display:flex;align-items:center;gap:16px;padding:14px 0}
+.masthead svg{flex:0 0 auto}
+.masthead h1{
+  font:normal clamp(1.25rem,4vw,1.8rem)/1.2 Georgia,'Times New Roman',serif;
+  margin:0;letter-spacing:.02em;
+}
+.masthead .dept{
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:#c8d4e6;margin-bottom:2px;
+}
+.masthead .tagline{font:italic .8rem Georgia,serif;color:#aebdd4;margin-top:3px}
+
+nav.gov{background:var(--navy-deep);border-bottom:1px solid #0e1c2c}
+nav.gov ul{display:flex;flex-wrap:wrap;list-style:none;margin:0;padding:0}
+nav.gov a{
+  display:block;padding:8px 14px;color:#dce6f4;text-decoration:none;
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  border-right:1px solid rgba(255,255,255,.08);
+}
+nav.gov a:hover{background:rgba(255,255,255,.08)}
+nav.gov .subbasement a{color:#e8c96a}
+
+/* ── Ticker (a loving marquee parody) ─────── */
+.ticker{
+  background:#e9e4d3;border-bottom:1px solid var(--rule);
+  overflow:hidden;white-space:nowrap;font-size:.72rem;color:#4c4a3f;
+}
+.ticker .track{display:inline-block;padding:5px 0;animation:tick 55s linear infinite}
+.ticker b{color:var(--red);font-weight:bold}
+@keyframes tick{from{transform:translateX(100vw)}to{transform:translateX(-100%)}}
+
+/* ── Sections ─────────────────────────────── */
+main{padding:22px 0 8px}
+section.box{
+  background:var(--panel);border:1px solid var(--rule);
+  margin:0 0 20px;scroll-margin-top:12px;
+}
+section.box>h2{
+  margin:0;padding:7px 12px;background:#e5e0cf;border-bottom:1px solid var(--rule);
+  font:bold .72rem Verdana,sans-serif;letter-spacing:.18em;text-transform:uppercase;
+  color:#4a4738;
+}
+.box-body{padding:14px 16px}
+.box-body p{margin:.5em 0}
+
+/* ── Hero / status ────────────────────────── */
+.statusline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.chip{
+  font:bold .7rem 'Courier New',monospace;letter-spacing:.1em;
+  padding:4px 10px;border:1px solid;cursor:help;position:relative;
+}
+.chip[data-state=routine]{color:var(--navy);border-color:var(--navy);background:#e8edf5}
+.chip[data-state=irregular]{color:var(--amber);border-color:var(--amber);background:#f7ecd9}
+.chip[data-state=extant]{color:var(--green);border-color:var(--green);background:#e2efe6}
+.chip .tip{
+  position:absolute;left:0;top:calc(100% + 6px);z-index:5;display:none;
+  width:max-content;max-width:260px;padding:6px 10px;
+  background:#fffef7;border:1px solid var(--rule);box-shadow:2px 2px 0 rgba(0,0,0,.08);
+  font:italic .72rem Georgia,serif;color:var(--muted);letter-spacing:0;text-transform:none;
+}
+.chip:hover .tip,.chip:focus .tip{display:block}
+.stats{
+  font:.95rem/1.9 Georgia,serif;border-left:3px solid var(--gold);
+  padding-left:14px;margin:10px 0;
+}
+.stats b{font-family:'Courier New',monospace;font-size:.9em}
+.gerald-line{font:italic .85rem Georgia,serif;color:var(--muted)}
+
+/* ── Notices ──────────────────────────────── */
+.notice{border-bottom:1px dashed var(--rule);padding:10px 0}
+.notice:last-child{border-bottom:0}
+.notice .no{
+  font:bold .68rem 'Courier New',monospace;color:var(--red);letter-spacing:.08em;
+}
+.notice h3{margin:2px 0 4px;font:bold .95rem Georgia,serif}
+.notice p{margin:0;font-size:.82rem}
+
+/* ── Now serving ──────────────────────────── */
+.serving{display:flex;gap:28px;flex-wrap:wrap;align-items:baseline}
+.serving div{font-family:'Courier New',monospace}
+.serving .label{font-size:.62rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+.serving .num{font-size:2rem;font-weight:bold;color:var(--navy)}
+.serving .num.you{color:var(--red)}
+#waitNote{font:italic .78rem Georgia,serif;color:var(--muted);margin-top:8px;display:none}
+
+/* ── Form B-11 ────────────────────────────── */
+form#b11{position:relative}
+form#b11 .row{margin:0 0 12px}
+form#b11 label{display:block;font-size:.72rem;font-weight:bold;letter-spacing:.06em;margin-bottom:4px}
+form#b11 input[type=text]{
+  width:100%;max-width:380px;padding:6px 8px;border:1px solid #a9a493;
+  background:#fffef7;font:13px Verdana,sans-serif;color:var(--ink);
+}
+form#b11 .opts{display:flex;gap:18px;flex-wrap:wrap;font-size:.82rem}
+form#b11 .opts label{display:flex;align-items:center;gap:6px;font-weight:normal;margin:0}
+.btn{
+  font:bold .72rem Verdana,sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--paper);background:var(--navy);border:1px solid var(--navy-deep);
+  padding:8px 18px;cursor:pointer;box-shadow:1px 1px 0 var(--navy-deep);
+}
+.btn:hover{background:#2a4c7c}
+.btn:active{transform:translate(1px,1px);box-shadow:none}
+.btn[disabled]{background:#8a8778;border-color:#6d6a5e;cursor:default;transform:none}
+.small-print{font-size:.68rem;color:var(--muted);margin-top:10px}
+
+/* stamp impressions */
+.impression{
+  position:absolute;z-index:4;pointer-events:none;
+  font:bold 1.5rem 'Courier New',monospace;letter-spacing:.12em;
+  color:var(--red);border:4px double var(--red);border-radius:6px;
+  padding:4px 16px;transform:rotate(-8deg);opacity:.88;
+  mix-blend-mode:multiply;
+  -webkit-mask-image:radial-gradient(ellipse at 40% 60%,#000 55%,rgba(0,0,0,.55) 80%,rgba(0,0,0,.85) 100%);
+          mask-image:radial-gradient(ellipse at 40% 60%,#000 55%,rgba(0,0,0,.55) 80%,rgba(0,0,0,.85) 100%);
+}
+.impression.gold{color:var(--green);border-color:var(--green)}
+@keyframes slam{
+  0%{transform:rotate(-8deg) scale(3);opacity:0}
+  60%{transform:rotate(-8deg) scale(.94);opacity:.95}
+  100%{transform:rotate(-8deg) scale(1);opacity:.88}
+}
+.impression.slam{animation:slam .28s cubic-bezier(.2,.9,.3,1.2) both}
+
+/* ── Minutes ──────────────────────────────── */
+.minutes{font-size:.82rem}
+.minutes dt{font:bold .78rem 'Courier New',monospace;color:var(--navy);margin-top:10px}
+.minutes dd{margin:2px 0 0}
+
+/* ── Petition ─────────────────────────────── */
+.petition{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.sig-count{font:bold 1rem 'Courier New',monospace;color:var(--navy)}
+
+/* ── Sub-basement ─────────────────────────── */
+#subbasement{
+  background:#2b2823;color:#d8d2c0;border:1px solid #1a1815;
+}
+#subbasement>h2{background:#211f1b;border-color:#1a1815;color:#a89f87}
+#subbasement .box-body{padding:20px 16px}
+#subbasement .flicker-in{animation:lightflicker 1.6s steps(1,end) 1}
+@keyframes lightflicker{
+  0%,18%,23%,41%{opacity:.1}10%,20%,30%,50%,100%{opacity:1}
+}
+.desk-note{font:italic .82rem Georgia,serif;color:#a89f87;margin-bottom:16px}
+.basement-grid{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
+
+/* the framed order */
+.order-frame{
+  flex:1 1 320px;max-width:460px;position:relative;
+  border:10px solid #5d4a2e;background:#efe9d8;color:#2e2a20;
+  box-shadow:0 4px 14px rgba(0,0,0,.5);
+  cursor:pointer;user-select:none;
+}
+.order-doc{padding:18px 18px 14px;font:.74rem/1.7 'Courier New',monospace}
+.order-doc h3{margin:0 0 8px;font:bold .82rem 'Courier New',monospace;text-align:center;letter-spacing:.1em}
+.order-doc .whereas{margin:.4em 0}
+.order-doc .fatal{background:#f6efd6;border:1px dashed #a08c52;padding:4px 8px;margin:.6em 0}
+.order-doc .sig{font:italic 1.05rem Georgia,serif;margin-top:10px;color:#3a3428;transform:rotate(-2deg)}
+.glass{
+  position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:linear-gradient(115deg,rgba(255,255,255,.28) 0%,rgba(255,255,255,.05) 30%,rgba(255,255,255,0) 45%,rgba(255,255,255,.12) 80%);
+}
+.glass svg{position:absolute;inset:0;width:100%;height:100%}
+.glass path{stroke:rgba(40,40,45,.55);stroke-width:1.2;fill:none;visibility:hidden}
+.order-frame.shattered .glass{display:none}
+@keyframes shudder{0%,100%{transform:none}25%{transform:translate(-2px,1px)}75%{transform:translate(2px,-1px)}}
+.order-frame.hit{animation:shudder .12s linear 2}
+.donotstamp{
+  font:bold .66rem Verdana,sans-serif;letter-spacing:.2em;color:#e0d6ba;background:#7a2020;
+  display:inline-block;padding:4px 10px;margin-bottom:10px;transform:rotate(-1.5deg);
+}
+#attemptNote{font:italic .76rem Georgia,serif;color:#a89f87;min-height:1.4em;margin-top:10px}
+
+/* the chained stamp */
+.stamp-station{flex:0 0 200px;text-align:center}
+.stamp-station svg{touch-action:none}
+#approvedStamp{cursor:grab}
+#approvedStamp:active{cursor:grabbing}
+.stamp-caption{font:italic .72rem Georgia,serif;color:#a89f87;margin-top:6px}
+
+/* certificate */
+#certificate{
+  display:none;margin-top:22px;background:#fdfbf2;color:var(--ink);
+  border:3px double var(--gold);padding:20px;text-align:center;position:relative;
+}
+#certificate h3{font:normal 1.3rem Georgia,serif;margin:0 0 6px;color:var(--navy)}
+#certificate .certbody{font:.82rem/1.8 Georgia,serif}
+#certificate .certname{font:bold 1rem 'Courier New',monospace;color:var(--green)}
+
+/* ── Footer & map ─────────────────────────── */
+footer.gov{
+  background:linear-gradient(var(--navy),var(--navy-deep));color:#c8d4e6;
+  border-top:3px solid var(--gold);margin-top:28px;padding:22px 0 26px;
+  font-size:.72rem;
+}
+.mapwrap{background:#182c46;border:1px solid #0e1c2c;padding:12px;margin-bottom:14px}
+.mapwrap .maptitle{
+  font:bold .66rem Verdana,sans-serif;letter-spacing:.2em;text-transform:uppercase;
+  color:#8fa5c4;margin-bottom:8px;
+}
+.mapwrap svg{width:100%;height:auto;display:block}
+.parcel{fill:#24425f;stroke:#5b7595;stroke-width:1}
+.parcel-label{font:8px 'Courier New',monospace;fill:#a8bdd8}
+#parcel11{fill:var(--green);stroke:#7fce9d;opacity:0}
+#parcel11-label{fill:#d3f0dd;opacity:0}
+#gapOutline{fill:none;stroke:#5b7595;stroke-width:1;stroke-dasharray:3 3}
+.restored #parcel11,.restored #parcel11-label{opacity:1}
+.restored.flickering #parcel11,.restored.flickering #parcel11-label{animation:lightflicker 1.8s steps(1,end) 1 both}
+.restored #gapOutline,.restored #gapQ{display:none}
+/* Form D-11: a manila slip pinned to the footer. The one form the Office will
+   actually process, because it is the only one that undoes something. */
+.restore{
+  background:var(--paper);color:var(--ink);
+  border:1px solid var(--gold);box-shadow:2px 2px 0 rgba(0,0,0,.25);
+  padding:12px 14px;margin-bottom:16px;
+}
+.restore h3{
+  margin:0 0 5px;font:bold .68rem Verdana,sans-serif;letter-spacing:.14em;
+  text-transform:uppercase;color:#4a4738;
+}
+.restore p{margin:0 0 10px;font-size:.75rem;color:#5b5849;line-height:1.7}
+.btn-restore{
+  color:var(--paper);background:var(--red);border:1px solid #7f1a20;
+  box-shadow:1px 1px 0 #7f1a20;
+}
+.btn-restore:hover{background:#c53037}
+.btn-restore[data-armed=true]{
+  background:#7f1a20;border-color:#5d1216;
+  animation:armed 1.1s steps(1,end) infinite;
+}
+@keyframes armed{0%,60%{opacity:1}61%,100%{opacity:.72}}
+.restore .state{
+  font:.68rem/1.7 'Courier New',monospace;color:var(--muted);
+  margin-top:10px;padding-top:8px;border-top:1px dashed var(--rule);
+}
+@media(prefers-reduced-motion:reduce){
+  .btn-restore[data-armed=true]{animation:none}
+}
+
+footer .legal{color:#8fa5c4;line-height:1.9}
+footer .legal a{color:#c8d4e6}
+.visitor{font:.7rem 'Courier New',monospace;color:#8fa5c4;margin-top:8px}
+.visitor b{background:#0e1c2c;padding:1px 5px;color:#e8c96a;letter-spacing:.15em}
+
+/* ── Toast (interoffice memo) ─────────────── */
+#memo{
+  position:fixed;right:16px;bottom:16px;z-index:50;max-width:320px;
+  background:#fffbe8;border:1px solid #cbb96a;box-shadow:3px 3px 0 rgba(0,0,0,.15);
+  padding:10px 14px;font-size:.78rem;display:none;
+}
+#memo .memohead{
+  font:bold .62rem Verdana,sans-serif;letter-spacing:.2em;text-transform:uppercase;
+  color:#8a7428;border-bottom:1px solid #e2d49a;padding-bottom:4px;margin-bottom:6px;
+}
+@keyframes memoin{from{transform:translateY(12px);opacity:0}to{transform:none;opacity:1}}
+#memo.show{display:block;animation:memoin .25s ease-out}
+
+/* ── The trail ──
+   Where the reader has been. The Office keeps a route slip, because it keeps a slip
+   for everything. Sticky, so you can always walk back the way you came. */
+.trail{
+  position:sticky;top:0;z-index:30;
+  background:#e9e4d3;border-bottom:1px solid var(--rule);
+  box-shadow:0 1px 0 rgba(0,0,0,.07);
+}
+.trail .container{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 16px}
+.trail .lbl{
+  font:bold .6rem Verdana,sans-serif;letter-spacing:.18em;text-transform:uppercase;
+  color:#8a7428;flex:0 0 auto;
+}
+.trail ol{display:flex;align-items:center;flex-wrap:wrap;gap:4px;list-style:none;margin:0;padding:0}
+.trail li{display:flex;align-items:center}
+.trail li+li::before{content:"\203A";color:var(--muted);margin:0 6px 0 2px}
+.trail button{
+  background:none;border:0;padding:2px 3px;cursor:pointer;
+  color:#274a7e;font:.72rem 'Courier New',monospace;
+}
+.trail button:hover{text-decoration:underline}
+.trail button[disabled]{color:var(--ink);font-weight:bold;cursor:default;text-decoration:none}
+.trail .clear{
+  margin-left:auto;border:1px solid var(--rule);background:none;cursor:pointer;
+  font:bold .6rem Verdana,sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);padding:2px 8px;
+}
+.trail .clear:hover{color:var(--navy);border-color:var(--navy);background:#f4f1e6}
+
+/* ── Related records ──
+   One record may be a landmark, a line in a chronicle, and a notice all at once.
+   Hovering or focusing any of them lights the others.
+
+   Every liftable row reserves its own left rail (transparent until lit) and pulls
+   into the gutter, so lighting it draws a card *around* the text rather than a bar
+   *across* it. Nothing moves when it lights up; only the colour changes. */
+.lmk-list li[data-rel]{cursor:pointer}
+.lmk-list li[data-rel]:hover b{text-decoration:underline}
+.rel-lit{background:#fff5d6}
+.chron li.rel-lit,.lmk-list li.rel-lit{border-left-color:var(--gold)}
+.rec-notice.rel-lit{
+  border-left-color:var(--gold);
+  box-shadow:2px 2px 0 rgba(0,0,0,.05);
+}
+
+/* ── The Record (agent-written bulletin) ──── */
+.issueline{
+  font:.68rem 'Courier New',monospace;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:6px;
+  margin-bottom:10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+}
+.issueline b{color:var(--navy)}
+.mag{padding:1px 7px;border:1px solid var(--rule);background:#eee9d9;color:#5d5947}
+.mag[data-m=monumental]{color:var(--red);border-color:var(--red);background:#f7e3e4}
+.mag[data-m=major]{color:var(--amber);border-color:var(--amber);background:#f7ecd9}
+.mag[data-m=trivial]{color:var(--muted)}
+.headline{font:normal 1.35rem/1.3 Georgia,serif;color:var(--navy);margin:0 0 6px}
+.standfirst{
+  font:italic .9rem/1.6 Georgia,serif;color:#4c4a3f;margin:0 0 4px;
+  padding-bottom:12px;border-bottom:1px dashed var(--rule);
+}
+/* The rail is always there, just invisible: 12px of negative margin, 4px of rail,
+   8px of padding — so the text sits exactly where it would with no rail at all,
+   and lighting the row costs no layout. */
+.rec-notice{
+  border-bottom:1px dashed var(--rule);
+  border-left:4px solid transparent;
+  margin:0 -12px;
+  padding:12px 12px 12px 8px;
+  scroll-margin-top:16px;
+  transition:background .15s ease,border-left-color .15s ease;
+}
+.rec-notice:last-of-type{border-bottom:0}
+
+/* The notice you followed a record to. Marked the way a clerk marks a file:
+   a highlighter card and a rubber-stamped tag. Declared after .rel-lit so that a
+   flagged notice keeps its red rail even while you hover it. */
+.rec-notice.flagged{
+  background:#fff8e1;
+  border-left-color:var(--red);
+  border-bottom-style:solid;
+  box-shadow:2px 2px 0 rgba(0,0,0,.06);
+}
+.rec-notice .flag{
+  display:none;
+  font:bold .6rem Verdana,sans-serif;letter-spacing:.16em;text-transform:uppercase;
+  color:#fdf6e3;background:var(--red);padding:3px 8px;
+  margin:0 10px 7px 0;transform:rotate(-.6deg);
+}
+.rec-notice.flagged .flag{display:inline-block}
+@keyframes flagIn{
+  0%{background:#ffe07a}
+  100%{background:#fff8e1}
+}
+.rec-notice.flagged{animation:flagIn 1.4s ease-out both}
+@media(prefers-reduced-motion:reduce){
+  .rec-notice.flagged{animation:none}
+}
+.rec-notice h4{margin:2px 0 5px;font:bold .95rem Georgia,serif}
+.rec-notice p{margin:0;font-size:.82rem}
+/* the button that admits what really happened */
+.truth{
+  margin-top:8px;font:bold .62rem Verdana,sans-serif;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);background:none;
+  border:1px solid var(--rule);padding:3px 9px;cursor:pointer;
+}
+.truth:hover{color:var(--navy);border-color:var(--navy);background:#eef1f7}
+.truthbox{
+  display:none;margin-top:8px;padding:9px 11px;background:#eceff4;
+  border-left:3px solid var(--navy);font:.72rem/1.75 'Courier New',monospace;color:#3f4a5a;
+}
+.truthbox.open{display:block}
+.truthbox .t-sha{color:var(--red);font-weight:bold}
+.truthbox .t-msg{color:var(--ink)}
+.truthbox .t-wards{margin-top:2px}
+.truthbox .t-ward{
+  background:none;border:0;padding:0;cursor:pointer;
+  color:#274a7e;font:.72rem 'Courier New',monospace;text-decoration:underline;
+}
+.truthbox .t-ward:hover{color:var(--navy);background:#fff2c4}
+.truthbox .t-cap{
+  display:block;font:italic .68rem Georgia,serif;color:var(--muted);
+  margin-top:5px;letter-spacing:0;
+}
+.minute-box{margin-top:16px;padding-top:12px;border-top:1px solid var(--rule);font-size:.82rem}
+.minute-box .sess{font:bold .72rem 'Courier New',monospace;color:var(--navy)}
+.gerald-sign{
+  margin-top:14px;font:italic .85rem/1.7 Georgia,serif;color:var(--muted);
+  border-left:3px solid var(--gold);padding-left:12px;
+}
+.archive{margin-top:18px;border-top:1px solid var(--rule);padding-top:10px}
+.archive summary{
+  cursor:pointer;font:bold .68rem Verdana,sans-serif;letter-spacing:.16em;
+  text-transform:uppercase;color:#4a4738;
+}
+.arch-list{list-style:none;margin:10px 0 0;padding:0;font-size:.78rem}
+.arch-list li{
+  display:flex;gap:10px;padding:5px 0;border-bottom:1px dotted var(--rule);align-items:baseline;
+}
+.arch-list time{font:.7rem 'Courier New',monospace;color:var(--muted);flex:0 0 76px}
+.arch-list button{
+  background:none;border:0;padding:0;text-align:left;cursor:pointer;
+  color:#274a7e;font:inherit;
+}
+.arch-list button:hover{text-decoration:underline}
+.arch-list li[aria-current=true] button{font-weight:bold;color:var(--ink);cursor:default}
+.empty-note{font:italic .82rem Georgia,serif;color:var(--muted)}
+
+/* ── Ward survey (the town as it actually grows) ── */
+.survey-svg{
+  width:100%;height:auto;display:block;background:#eee9d9;border:1px solid var(--rule);
+}
+.plot{stroke-width:1}
+.plot[data-c=maintained]{fill:#dfeee4;stroke:var(--green)}
+.plot[data-c=fair]{fill:#e6ebf3;stroke:#7d93b3}
+.plot[data-c=worn]{fill:#f2e8d5;stroke:var(--amber)}
+.plot[data-c=derelict]{fill:#e8e5db;stroke:#a9a493;stroke-dasharray:3 3}
+.plot-name{font:7px Georgia,serif;fill:#3c3a30}
+.plot-meta{font:5.5px 'Courier New',monospace;fill:#6d6a5e}
+.bldg{fill:#5d7594}
+.bldg[data-c=maintained]{fill:#2f7d4f}
+.bldg[data-c=worn]{fill:#b58a3c}
+.bldg[data-c=derelict]{fill:#b3aea0}
+.lmk{fill:var(--gold)}
+.legend{font:.68rem 'Courier New',monospace;color:var(--muted);margin-top:8px}
+.legend i{font-style:normal;padding:0 6px 0 0}
+.legend .hint{font:italic .72rem Georgia,serif;display:block;margin-top:4px;color:#8a8778}
+
+/* ── Ward file (drill into a place) ───────── */
+.plot-hit{cursor:pointer}
+.plot-hit:focus-visible{outline:2px solid var(--navy);outline-offset:1px}
+.plot-hit:hover .plot,.plot-hit:focus-visible .plot{stroke-width:2.5}
+.plot[data-sel=true]{stroke-width:3}
+.ward-file{
+  margin-top:14px;border:1px solid var(--rule);background:#fffef7;
+  box-shadow:2px 2px 0 rgba(0,0,0,.07);
+}
+.wf-head{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding:7px 12px;background:#e5e0cf;border-bottom:1px solid var(--rule);
+}
+.wf-head h3{
+  margin:0;font:bold .72rem Verdana,sans-serif;letter-spacing:.16em;
+  text-transform:uppercase;color:#4a4738;
+}
+.wf-close{
+  background:none;border:1px solid var(--rule);cursor:pointer;
+  font:bold .62rem Verdana,sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);padding:3px 8px;
+}
+.wf-close:hover{color:var(--navy);border-color:var(--navy);background:#eef1f7}
+.wf-body{padding:12px 14px}
+.wf-note{font:italic .82rem Georgia,serif;color:var(--muted);margin:0 0 10px}
+.wf-stats{
+  display:flex;flex-wrap:wrap;gap:2px 22px;font:.72rem/1.9 'Courier New',monospace;
+  color:var(--muted);border-left:3px solid var(--gold);padding-left:12px;margin-bottom:4px;
+}
+.wf-stats b{color:var(--ink);font-weight:bold}
+.cond{
+  font:bold .62rem Verdana,sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  padding:2px 7px;border:1px solid;
+}
+.cond[data-c=maintained]{color:var(--green);border-color:var(--green);background:#e2efe6}
+.cond[data-c=fair]{color:var(--navy);border-color:var(--navy);background:#e8edf5}
+.cond[data-c=worn]{color:var(--amber);border-color:var(--amber);background:#f7ecd9}
+.cond[data-c=derelict]{color:var(--muted);border-color:#a9a493;background:#e8e5db}
+.wf-sub{
+  font:bold .64rem Verdana,sans-serif;letter-spacing:.16em;text-transform:uppercase;
+  color:#4a4738;margin:16px 0 6px;padding-bottom:4px;border-bottom:1px solid var(--rule);
+}
+.lmk-list{list-style:none;margin:0;padding:0;font-size:.8rem}
+.lmk-list li{
+  position:relative;
+  border-left:3px solid transparent;
+  margin:0 -8px;
+  padding:5px 8px 5px 19px;
+  transition:background .15s ease,border-left-color .15s ease;
+}
+.lmk-list li::before{content:"\25C6";position:absolute;left:6px;color:var(--gold)}
+.lmk-list i{font-style:italic;color:var(--muted);font-size:.76rem}
+.struct-list{
+  columns:2;column-gap:24px;margin:0;padding-left:16px;
+  font:.72rem/1.8 'Courier New',monospace;color:#4c4a3f;
+}
+.chron{list-style:none;margin:0;padding:0}
+.chron li{
+  display:grid;grid-template-columns:70px 74px 1fr;gap:10px;align-items:baseline;
+  border-left:3px solid transparent;
+  border-bottom:1px dotted var(--rule);
+  margin:0 -8px;
+  padding:6px 8px 6px 5px;
+  font-size:.78rem;
+  transition:background .15s ease,border-left-color .15s ease;
+}
+.chron li:last-child{border-bottom:0}
+.chron time{font:.68rem 'Courier New',monospace;color:var(--muted)}
+.chron .k{
+  font:bold .58rem Verdana,sans-serif;letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid var(--rule);background:#eef1f7;color:var(--navy);
+  padding:1px 3px;text-align:center;
+}
+.chron .k[data-k=demolition]{color:var(--red);border-color:var(--red);background:#f7e3e4}
+.chron .k[data-k=repair]{color:var(--amber);border-color:var(--amber);background:#f7ecd9}
+.chron .k[data-k=filing]{color:var(--muted);border-color:#a9a493;background:#eee9d9}
+.chron .k[data-k=annexation],.chron .k[data-k=treaty]{
+  color:var(--green);border-color:var(--green);background:#e2efe6;
+}
+.chron .sha{font:.68rem 'Courier New',monospace;color:var(--red)}
+.chron .who{color:var(--muted);font-size:.72rem}
+.chron .rep{
+  display:block;background:none;border:0;padding:2px 0 0;cursor:pointer;
+  color:#274a7e;font:italic .72rem Georgia,serif;text-align:left;
+}
+.chron .rep:hover{text-decoration:underline}
+@media(max-width:600px){
+  .struct-list{columns:1}
+  .chron li{grid-template-columns:64px 68px 1fr;gap:6px}
+}
+.rolls{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.roll{border:1px solid var(--rule);background:#f4f1e6;padding:5px 9px;font-size:.75rem}
+.roll b{font-family:'Courier New',monospace}
+.roll .ep{font:italic .72rem Georgia,serif;color:var(--muted)}
+.roll[data-bot=true]{background:#e9ecf1;border-color:#9fb0c6}
+.saga{border-left:3px solid var(--navy);padding:6px 0 6px 12px;margin:10px 0;font-size:.8rem}
+.saga h4{margin:0 0 3px;font:bold .85rem Georgia,serif}
+.saga .beat{color:var(--muted);font-size:.76rem}
+.saga[data-s=resolved]{border-color:var(--green)}
+.saga[data-s=abandoned]{border-color:#a9a493;opacity:.72}
+.subhead{
+  font:bold .66rem Verdana,sans-serif;letter-spacing:.18em;text-transform:uppercase;
+  color:#4a4738;margin:18px 0 6px;
+}
+
+@media(max-width:600px){
+  .masthead{gap:10px}
+  .masthead .seal{width:88px;height:88px}
+  .serving{gap:18px}
+  .basement-grid{flex-direction:column}
+  .stamp-station{flex:none;align-self:center}
+  #memo{left:16px;max-width:none}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ticker .track{animation:none;padding-left:6px}
+  .impression.slam,.order-frame.hit,#subbasement .flicker-in,
+  .restored.flickering #parcel11,.restored.flickering #parcel11-label,#memo.show{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header class="gov">
+  <div class="container masthead">
+    <!-- The seal of District 11. Istoletha has not commissioned its own: a new seal
+         requires Form S-2, Form S-2 requires a district, and the district was
+         dissolved in 1994. The matter is under review. It will remain under review. -->
+    <svg class="seal" width="118" height="118" viewBox="0 0 100 100" role="img" aria-label="Seal of District 11, still in use by Istoletha Town: a small municipal building, motto Adhuc Hic — Still Here">
+      <circle cx="50" cy="50" r="48" fill="#16293f" stroke="#b8912f" stroke-width="2"/>
+      <circle cx="50" cy="50" r="38" fill="none" stroke="#b8912f" stroke-width="1"/>
+      <defs><path id="sealArc" d="M50,50 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/></defs>
+      <text font-size="8.5" fill="#c8d4e6" letter-spacing="1.5" font-family="Georgia,serif">
+        <textPath href="#sealArc" startOffset="1%">OFFICE OF REMAINING AFFAIRS • DISTRICT 11 • EST. 1952, MOSTLY •</textPath>
+      </text>
+      <!-- tiny municipal building -->
+      <g fill="#c8d4e6">
+        <polygon points="50,26 32,38 68,38"/>
+        <rect x="36" y="38" width="28" height="20"/>
+        <rect x="41" y="44" width="5" height="14" fill="#16293f"/>
+        <rect x="48" y="44" width="5" height="8" fill="#16293f"/>
+        <rect x="55" y="44" width="5" height="14" fill="#16293f"/>
+        <rect x="33" y="58" width="34" height="3"/>
+      </g>
+      <text x="50" y="72" font-size="8" fill="#b8912f" text-anchor="middle" font-family="Georgia,serif" font-style="italic">ADHUC HIC</text>
+      <text x="50" y="81" font-size="5.5" fill="#8fa5c4" text-anchor="middle" font-family="Verdana,sans-serif">(&#8220;STILL HERE&#8221;)</text>
+    </svg>
+    <div>
+      <div class="dept">Office of Remaining Affairs</div>
+      <h1>Istoletha&nbsp;Town</h1>
+      <div class="tagline" title="The seal is District 11&rsquo;s. A replacement has been requisitioned.">
+        Formerly District&nbsp;11. Serving a population of zero with distinction.
+      </div>
+    </div>
+  </div>
+  <nav class="gov" aria-label="Main">
+    <div class="container">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#record">The Record</a></li>
+        <li><a href="#notices">Public Notices</a></li>
+        <li><a href="#form-b11">Form B-11</a></li>
+        <li><a href="#minutes">Minutes</a></li>
+        <li><a href="#petition">Petition</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="subbasement" id="subNavSlot" hidden><a href="#subbasement">Sub-Basement</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <span class="track"><b>NOTICE:</b> There is no news. This is the news. &nbsp;&bull;&nbsp; Office hours remain Tuesday. &nbsp;&bull;&nbsp; The pothole on Mill Rd has been scheduled for consideration for scheduling. &nbsp;&bull;&nbsp; Residents are reminded that there are no residents. &nbsp;&bull;&nbsp; This message will repeat, as is tradition.</span>
+</div>
+
+<nav class="trail" id="trail" aria-label="Your route through the record" hidden>
+  <div class="container">
+    <span class="lbl">Route Slip</span>
+    <ol id="trailSteps"></ol>
+    <button type="button" class="clear" id="trailClear">Close</button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- ── HOME ── -->
+  <section class="box" id="home">
+    <h2>Official Bulletin — Desk of the Deputy Sub-Administrator (Acting)</h2>
+    <div class="box-body">
+      <div class="statusline">
+        <span class="chip" id="statusChip" data-state="routine" tabindex="0">
+          CURRENT TOWN STATUS: <span id="statusWord">ROUTINE</span>
+          <span class="tip">&#8220;Routine is a choice we make daily.&#8221; — G.</span>
+        </span>
+      </div>
+      <div class="stats" id="heroStats">
+        Population: <b>0</b>. &nbsp;Established: <b>1952</b>. &nbsp;Dissolved: <b>1994</b> (clerical).<br>
+        Website last updated: <b>Tuesday</b>. <span title="It has been Tuesday since 1994.">It is always Tuesday here.</span>
+      </div>
+      <p class="gerald-line" id="geraldLine">Staff: Gerald, Deputy Sub-Administrator (Acting). Gerald is here. Gerald is always here.</p>
+      <p style="font-size:.82rem">Welcome to the official website of Istoletha Town, which occupies the parcel, the address, and the seal formerly belonging to District&nbsp;11. The circumstances of the acquisition are not in dispute, as no one has disputed them. If you have arrived here by accident, please be assured that the town extends you its full administrative hospitality, which is this paragraph.</p>
+    </div>
+  </section>
+
+  <!-- ── THE RECORD ──
+       Written by the editor (an agent) from the town's real history. Every notice
+       carries the record that caused it; see the "What actually happened" button. -->
+  <section class="box" id="record">
+    <h2>The Record — Bulletin of Istoletha Town</h2>
+    <div class="box-body">
+      <p class="empty-note" id="recordEmpty">
+        The Record is not currently available. This is either a temporary fault or the
+        natural condition of the town. Gerald is looking into it, as he is looking into
+        everything.
+      </p>
+
+      <article id="latestDispatch" hidden>
+        <div class="issueline">
+          <span>Issue <b id="issueNo">—</b></span>
+          <span>&bull;</span>
+          <time id="issueDate">—</time>
+          <span>&bull;</span>
+          <span class="mag" id="issueMag" data-m="routine">—</span>
+          <span id="issueProv"></span>
+        </div>
+        <h3 class="headline" id="headline">—</h3>
+        <p class="standfirst" id="standfirst">—</p>
+        <div id="noticeList"></div>
+        <div class="minute-box" id="minuteBox" hidden>
+          <div class="sess" id="minuteSess"></div>
+          <div id="minuteText"></div>
+        </div>
+        <p class="gerald-sign" id="geraldSign"></p>
+      </article>
+
+      <details class="archive" id="archive" hidden>
+        <summary>Back Issues</summary>
+        <ul class="arch-list" id="archList"></ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- ── WARD SURVEY ──
+       Drawn from town-state.json. The town grows here as the history grows. -->
+  <section class="box" id="survey" hidden>
+    <h2>Ward Survey — Official Plan (rev. Tuesday)</h2>
+    <div class="box-body">
+      <svg class="survey-svg" id="surveySvg" viewBox="0 0 400 200" role="img"
+           aria-labelledby="surveyDesc"></svg>
+      <p id="surveyDesc" class="legend">
+        <i style="color:var(--green)">&#9632;</i>maintained
+        <i style="color:#7d93b3">&#9632;</i>fair
+        <i style="color:var(--amber)">&#9632;</i>worn
+        <i style="color:#a9a493">&#9632;</i>derelict
+        <i style="color:var(--gold)">&#9670;</i>landmark
+        <span class="hint">Select a ward to open its file. The Office keeps a file on everywhere.</span>
+      </p>
+
+      <div class="ward-file" id="wardFile" hidden>
+        <div class="wf-head">
+          <h3 id="wfName">—</h3>
+          <button type="button" class="wf-close" id="wfClose">Close the file</button>
+        </div>
+        <div class="wf-body" id="wfBody"></div>
+      </div>
+
+      <div class="subhead">The Rolls</div>
+      <div class="rolls" id="rolls"></div>
+
+      <div class="subhead" id="sagaHead" hidden>Matters Outstanding</div>
+      <div id="sagas"></div>
+    </div>
+  </section>
+
+  <!-- ── NOTICES ── -->
+  <section class="box" id="notices">
+    <h2>Public Notices (Standing)</h2>
+    <div class="box-body">
+      <div class="notice">
+        <span class="no">NOTICE №11-031</span>
+        <h3>Founders&rsquo; Day Parade — Canceled</h3>
+        <p>The Founders&rsquo; Day Parade is canceled for the 31st consecutive year, as the town does not exist and its founders are not discussed. Route unchanged. Attendance last year was strong (0) and we hope to match it.</p>
+      </div>
+      <div class="notice">
+        <span class="no">NOTICE №11-044</span>
+        <h3>Office Hours</h3>
+        <p>Monday–Friday, 9:00–5:00. Office location: pending litigation. Knock anyway. Gerald will hear it. Gerald hears everything, which is one of the quieter aspects of the job.</p>
+      </div>
+      <div class="notice">
+        <span class="no">NOTICE №11-047</span>
+        <h3>Lights in the Sky</h3>
+        <p>Lights in the sky are not town business. Sky inquiries should be directed to our colleagues at <a href="https://tnkr.fun">tnkr.fun</a>, who seem excited about that sort of thing. The town maintains no opinion on the sky, in accordance with policy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NOW SERVING ── -->
+  <section class="box" id="queue">
+    <h2>Permit Counter — Queue Status</h2>
+    <div class="box-body">
+      <div class="serving">
+        <div><div class="label">Now Serving</div><div class="num" id="nowServing">B-047</div></div>
+        <div><div class="label">Your Number</div><div class="num you">B-&#8734;</div></div>
+        <div><div class="label">Estimated Wait</div><div class="num" style="font-size:1rem;line-height:2.4">39 years (est.)</div></div>
+      </div>
+      <p id="waitNote">Thank you for waiting. Waiting is a service we provide.</p>
+    </div>
+  </section>
+
+  <!-- ── FORM B-11 ── -->
+  <section class="box" id="form-b11">
+    <h2>Form B-11 — Request for Acknowledgment of Existence</h2>
+    <div class="box-body">
+      <p style="font-size:.8rem;margin-top:0">Processing time: ongoing. Please complete all fields, or don&rsquo;t. Historically it has not mattered.</p>
+      <form id="b11" autocomplete="off">
+        <div class="row">
+          <label for="fullname">Full legal name</label>
+          <input type="text" id="fullname" name="fullname" maxlength="60" placeholder="As it appears on documents you may not have">
+        </div>
+        <div class="row">
+          <label>Have you existed previously?</label>
+          <div class="opts">
+            <label><input type="radio" name="existed" value="yes"> Yes</label>
+            <label><input type="radio" name="existed" value="no"> No</label>
+            <label><input type="radio" name="existed" value="pending" checked> Pending</label>
+          </div>
+        </div>
+        <div class="row">
+          <label for="reason">Reason for existing <span style="font-weight:normal">(optional, max 40 characters)</span></label>
+          <input type="text" id="reason" name="reason" maxlength="40" placeholder="Brevity is appreciated">
+        </div>
+        <button type="submit" class="btn" id="b11submit">File &amp; Forget</button>
+        <p class="small-print">This form is processed locally, immediately, and unfavorably. No information leaves this page. The town lacks the infrastructure, and frankly the nerve.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── MINUTES ── -->
+  <section class="box" id="minutes">
+    <h2>Minutes of the Council</h2>
+    <div class="box-body minutes">
+      <dl>
+        <dt>412th Ordinary Session — Tuesday</dt>
+        <dd>Agenda item 3: the humming from the sub-basement. Motion to continue not hearing it. Carried 1–0 (Gerald). No abstentions. There is no one to abstain.</dd>
+        <dt>413th Ordinary Session — also Tuesday</dt>
+        <dd>Agenda item 1: approval of the minutes of the 412th session. Approved, warmly. Agenda item 2: motion to adjourn. Denied. There is nowhere to go.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ── PETITION ── -->
+  <section class="box" id="petition">
+    <h2>Petition for Recognition of Istoletha Town</h2>
+    <div class="box-body">
+      <p style="font-size:.82rem;margin-top:0">A petition that the town be entered on the official map, in the space it is already standing in. Signatures are collected on an ongoing basis and reviewed never. Your support is noted, laminated, and treasured.</p>
+      <div class="petition">
+        <span class="sig-count" id="sigCount">Signatures: 1 (Gerald)</span>
+        <button type="button" class="btn" id="signBtn">Sign the Petition</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="box" id="contact">
+    <h2>Contact &amp; Frequently Asked Questions</h2>
+    <div class="box-body" style="font-size:.82rem">
+      <p><b>Q: Is this District 11?</b><br>A: Legally, no.</p>
+      <p><b>Q: Was it ever?</b><br>A: Briefly, and beautifully.</p>
+      <p><b>Q: Is this Istoletha Town?</b><br>A: Legally, also no. But we are standing in it.</p>
+      <p><b>Q: How did the town come to be here?</b><br>A: The town came to be here.</p>
+      <p><b>Q: Why does the seal still say District 11?</b><br>A: A new seal requires Form&nbsp;S-2. Form&nbsp;S-2 requires a district. The matter is under review and will remain so.</p>
+      <p><b>Q: I was looking for a different website.</b><br>A: Everyone is. Stay a moment anyway.</p>
+      <p><b>Telephone:</b> unplugged (the ringing was ominous).<br>
+         <b>Correspondence:</b> mail is checked on Tuesdays. It is always Tuesday, and yet, no mail.</p>
+    </div>
+  </section>
+
+  <!-- ── SUB-BASEMENT (hidden until Form B-11 is denied) ── -->
+  <section class="box" id="subbasement" hidden>
+    <h2>Sub-Basement — Records &amp; Storage (Authorized Personnel and You)</h2>
+    <div class="box-body flicker-in" id="basementBody">
+      <p class="desk-note">The light down here is on a timer Gerald has never found. Mind the humming. The humming minds you back.</p>
+      <div class="basement-grid">
+        <div class="order-frame" id="orderFrame" role="button" tabindex="0" aria-label="The framed Dissolution Order of 1994, under glass. A sign says do not stamp.">
+          <div class="glass" id="glassLayer">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M48,0 L45,18 L52,30"/>
+              <path d="M45,18 L30,26 L24,44"/>
+              <path d="M52,30 L64,42 L60,60"/>
+              <path d="M30,26 L18,20"/>
+              <path d="M24,44 L12,58 L16,74"/>
+              <path d="M64,42 L80,48 L86,38"/>
+              <path d="M60,60 L52,78 L58,92"/>
+              <path d="M52,78 L38,84 L30,100"/>
+              <path d="M80,48 L88,66 L100,70"/>
+              <path d="M12,58 L0,62"/>
+            </svg>
+          </div>
+          <div class="order-doc">
+            <div style="text-align:center"><span class="donotstamp">DO&nbsp;NOT&nbsp;STAMP</span></div>
+            <h3>ORDER OF DISSOLUTION<br>MUNICIPAL DISTRICT №11</h3>
+            <p class="whereas">WHEREAS the District was found administratively redundant;</p>
+            <p class="whereas">WHEREAS Form 1077-D was filed in triplicate, twice;</p>
+            <p class="whereas">AND WHEREAS the following box was provided in the event of objection:</p>
+            <p class="fatal">&#9744;&nbsp; Do not dissolve <em>(box unchecked — see box)</em></p>
+            <p class="whereas">NOW THEREFORE the District is hereby DISSOLVED. Effective: Tuesday.</p>
+            <p class="sig">— per procurationem, someone</p>
+          </div>
+        </div>
+        <div class="stamp-station">
+          <svg id="stampSvg" width="180" height="200" viewBox="0 0 180 200" aria-label="A rubber stamp marked APPROVED, chained to the desk">
+            <!-- desk anchor -->
+            <rect x="0" y="182" width="180" height="18" fill="#4a3d28"/>
+            <circle cx="30" cy="184" r="5" fill="#8a8778" stroke="#2b2823"/>
+            <!-- chain -->
+            <path id="chainPath" d="M30,184 Q52,150 76,132" stroke="#8a8778" stroke-width="3" stroke-dasharray="7 4" fill="none"/>
+            <!-- stamp -->
+            <g id="approvedStamp" tabindex="0" role="button" aria-label="Drag the APPROVED stamp (it is chained)">
+              <rect x="70" y="120" width="60" height="16" rx="3" fill="#6b1f1f"/>
+              <rect x="82" y="84" width="36" height="38" rx="6" fill="#7a4a20"/>
+              <rect x="92" y="64" width="16" height="24" rx="6" fill="#8a5a2a"/>
+              <text x="100" y="132" font-size="9" font-family="Courier New,monospace" font-weight="bold" fill="#e0d6ba" text-anchor="middle">APPROVED</text>
+            </g>
+          </svg>
+          <div class="stamp-caption" id="stampCaption">Property of the town, latterly. The chain is policy.</div>
+        </div>
+      </div>
+      <p id="attemptNote" aria-live="polite"></p>
+
+      <div id="certificate" aria-live="polite">
+        <h3>Certificate of Entry Upon the Map</h3>
+        <div class="certbody">
+          Be it known that <span class="certname">THE BEARER OF THIS SCREEN</span><br>
+          did, by eleven acts of gentle municipal defiance, enter Istoletha&nbsp;Town upon the official map,<br>
+          in the space it was already standing in,<br>
+          and is hereby appointed <b>Honorary Deputy Sub-Administrator (Acting)</b>.<br>
+          <span style="font-style:italic;color:var(--muted)">Duties: none. Standing: eternal. Provenance: not discussed.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="gov">
+  <div class="container">
+    <div class="mapwrap" id="mapWrap">
+      <div class="maptitle">Municipal Districts — Official Map (rev. Tuesday)</div>
+      <svg viewBox="0 0 400 180" role="img" aria-label="Map of municipal districts 1 through 12. The eleventh parcel is missing; in its place, a dashed outline and a question mark. Istoletha Town is standing there, unrecorded.">
+        <polygon class="parcel" points="8,10 96,6 90,58 14,64"/>          <text class="parcel-label" x="34" y="38">DIST. 1</text>
+        <polygon class="parcel" points="100,6 190,12 184,60 94,58"/>       <text class="parcel-label" x="122" y="38">DIST. 2</text>
+        <polygon class="parcel" points="194,12 288,8 292,62 188,60"/>      <text class="parcel-label" x="218" y="40">DIST. 3</text>
+        <polygon class="parcel" points="292,8 392,14 388,66 296,62"/>      <text class="parcel-label" x="320" y="42">DIST. 4</text>
+        <polygon class="parcel" points="10,68 90,62 96,116 16,120"/>       <text class="parcel-label" x="34" y="94">DIST. 5</text>
+        <polygon class="parcel" points="94,62 184,64 180,118 100,116"/>    <text class="parcel-label" x="118" y="94">DIST. 6</text>
+        <polygon class="parcel" points="188,64 292,66 286,120 184,118"/>   <text class="parcel-label" x="216" y="96">DIST. 7</text>
+        <polygon class="parcel" points="296,66 388,70 392,122 290,120"/>   <text class="parcel-label" x="320" y="98">DIST. 8</text>
+        <polygon class="parcel" points="12,124 96,120 92,172 18,168"/>     <text class="parcel-label" x="34" y="150">DIST. 9</text>
+        <polygon class="parcel" points="100,120 180,122 186,170 96,172"/>  <text class="parcel-label" x="116" y="150">DIST. 10</text>
+        <!-- the gap where District 11 was, and where Istoletha now stands unrecorded -->
+        <polygon id="gapOutline" points="184,122 286,124 282,172 190,170"/>
+        <text id="gapQ" class="parcel-label" x="230" y="152" style="font-size:14px;fill:#5b7595">?</text>
+        <polygon id="parcel11" points="184,122 286,124 282,172 190,170"/>
+        <text id="parcel11-label" class="parcel-label" x="205" y="150">ISTOLETHA</text>
+        <polygon class="parcel" points="290,124 392,126 388,174 286,172"/> <text class="parcel-label" x="316" y="152">DIST. 12</text>
+      </svg>
+    </div>
+    <!-- The only form the Office will actually process. -->
+    <div class="restore">
+      <h3>Form D-11 — Application to Restore the Order of Dissolution</h3>
+      <p>
+        Any act performed upon this website — a signature, a filing, a stamping, the entry
+        of the town upon the official map — may be reversed upon application. The Office
+        will restore the file to its previous condition. It does this willingly. It has had
+        practice.
+      </p>
+      <button type="button" class="btn btn-restore" id="restoreBtn" data-armed="false">
+        File Form D-11
+      </button>
+      <div class="state" id="restoreState" aria-live="polite"></div>
+    </div>
+
+    <div class="legal">
+      © 1952–1994–present, whichever comes first. The Office of Remaining Affairs is not responsible for districts, remaining, or affairs.<br>
+      Istoletha Town occupies the parcel formerly designated District 11. The Office does not hold documents relating to the transfer and has not been asked for any.<br>
+      This site is best viewed at 800×600, in a browser you no longer have, on a Tuesday.<br>
+      Accessibility statement: the town is not currently accessible, as it does not exist. We are working on both.
+    </div>
+    <div class="visitor">Visitors since 1994: <b id="visitorCount">000,002</b> <span style="font-style:italic">(Gerald, and you — counting is a service we provide to ourselves)</span></div>
+  </div>
+</footer>
+
+<div id="memo" role="status">
+  <div class="memohead">Interoffice Memo</div>
+  <div id="memoBody"></div>
+</div>
+
+<noscript><div class="container" style="padding:10px 16px;font-size:.75rem;color:#6d6a5e">Interactive municipal services are unavailable without JavaScript. Gerald apologizes. Gerald also, privately, understands.</div></noscript>
+
+<script>
+(()=>{
+"use strict";
+const $=id=>document.getElementById(id);
+const store={
+  get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},
+  set:(k,v)=>{try{localStorage.setItem(k,String(v))}catch(e){}}
+};
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ── interoffice memo (toast) ── */
+let memoTimer=null;
+function memo(text,ms){
+  const m=$('memo');$('memoBody').textContent=text;
+  m.classList.remove('show');void m.offsetWidth;m.classList.add('show');
+  clearTimeout(memoTimer);memoTimer=setTimeout(()=>m.classList.remove('show'),ms||4500);
+}
+
+/* ── the municipal thunk (WebAudio, synthesized) ── */
+let actx=null;
+function thunk(gold){
+  try{
+    actx=actx||new (window.AudioContext||window.webkitAudioContext)();
+    if(actx.state==='suspended')actx.resume();
+    const t=actx.currentTime;
+    const o=actx.createOscillator(),g=actx.createGain();
+    o.type='triangle';o.frequency.setValueAtTime(gold?110:70,t);
+    o.frequency.exponentialRampToValueAtTime(gold?55:38,t+.12);
+    g.gain.setValueAtTime(.28,t);g.gain.exponentialRampToValueAtTime(.001,t+.16);
+    o.connect(g);g.connect(actx.destination);o.start(t);o.stop(t+.18);
+    const buf=actx.createBuffer(1,Math.floor(actx.sampleRate*.04),actx.sampleRate);
+    const d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*(1-i/d.length);
+    const n=actx.createBufferSource(),ng=actx.createGain();
+    n.buffer=buf;ng.gain.setValueAtTime(.12,t);n.connect(ng);ng.connect(actx.destination);n.start(t);
+  }catch(e){}
+}
+
+/* ── stamp an impression onto an element ── */
+function stamp(host,text,gold,x,y,quiet){
+  const el=document.createElement('div');
+  el.className='impression'+(gold?' gold':'')+(reduced||quiet?'':' slam');
+  el.textContent=text;
+  el.style.left=(x!=null?x:20+Math.random()*30)+'%';
+  el.style.top=(y!=null?y:25+Math.random()*30)+'%';
+  host.appendChild(el);
+  if(!quiet)thunk(gold);
+  return el;
+}
+
+/* ── status chip ── */
+function setStatus(state,word){
+  $('statusChip').dataset.state=state;$('statusWord').textContent=word;
+}
+
+/* ── now serving ticker ── */
+let served=47,ticks=0;
+setInterval(()=>{
+  served++;ticks++;
+  $('nowServing').textContent='B-'+String(served).padStart(3,'0');
+  if(ticks===3)$('waitNote').style.display='block';
+},45000);
+
+/* ── petition ── */
+const signBtn=$('signBtn'),sigCount=$('sigCount');
+function renderSigned(returning){
+  sigCount.textContent=returning
+    ?'Signatures: 2 (Gerald, and you. Gerald remembers you.)'
+    :'Signatures: 2 (Gerald, and you)';
+  signBtn.disabled=true;signBtn.textContent='You have signed';
+}
+if(store.get('ist_signed'))renderSigned(true);
+signBtn.addEventListener('click',()=>{
+  if(signBtn.disabled)return;
+  store.set('ist_signed',1);renderSigned(false);
+  renderStanding();
+  memo('Gerald has been notified of your signature. Gerald is delighted. Gerald has laminated it.');
+});
+
+/* ── Form B-11 → DENIED → sub-basement ── */
+const form=$('b11');let denials=0;
+const denialStamps=['DENIED','DENIED AGAIN','STILL DENIED','SEE PREVIOUS'];
+function unlockBasement(){
+  $('subNavSlot').hidden=false;$('subbasement').hidden=false;
+}
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  stamp(form,denialStamps[Math.min(denials,denialStamps.length-1)],false,14+denials*10,8+denials*20);
+  denials++;
+  if(denials===1){
+    store.set('ist_irregular',1);
+    if(!store.get('ist_extant'))setStatus('irregular','IRREGULAR');
+    unlockBasement();
+    renderStanding();
+    memo('Denied. However, your interest in existing has been noted. A door has been noted also. — G.');
+  }else{
+    memo(denials===2?'Denied again. Persistence has been noted, admired, and denied. — G.'
+                    :'The stamp is warm now. Gerald suggests the Sub-Basement. — G.');
+  }
+});
+
+/* ── chained APPROVED stamp: drag & snap back ── */
+const stampG=$('approvedStamp'),chainPath=$('chainPath'),caption=$('stampCaption');
+let dragging=false,px=0,py=0,dragAttempts=0,freed=false;
+function setStampPos(dx,dy){
+  const max=freed?0:46;
+  const len=Math.hypot(dx,dy)||1;
+  if(len>max){dx=dx/len*max;dy=dy/len*max;}
+  stampG.setAttribute('transform','translate('+dx+','+dy+')');
+  chainPath.setAttribute('d','M30,184 Q'+(52+dx*.4)+','+(150+dy*.4)+' '+(76+dx)+','+(132+dy));
+}
+stampG.addEventListener('pointerdown',e=>{
+  if(freed)return;
+  dragging=true;px=e.clientX;py=e.clientY;
+  if(stampG.setPointerCapture)try{stampG.setPointerCapture(e.pointerId)}catch(err){}
+  e.preventDefault();
+});
+addEventListener('pointermove',e=>{
+  if(!dragging)return;setStampPos(e.clientX-px,e.clientY-py);
+});
+addEventListener('pointerup',()=>{
+  if(!dragging)return;dragging=false;dragAttempts++;
+  setStampPos(0,0);
+  const lines=['The chain is policy.','The chain held. The chain always holds.','Was that a creak? That was not a creak. (It creaked.)'];
+  caption.textContent=lines[Math.min(dragAttempts-1,lines.length-1)];
+  if(dragAttempts>=3)chainPath.setAttribute('stroke-dasharray','4 8');
+});
+
+/* ── the Dissolution Order: 11 taps ── */
+const frame=$('orderFrame'),note=$('attemptNote'),cracks=[...document.querySelectorAll('.glass path')];
+let hits=parseInt(store.get('ist_stamps')||'0',10)||0;
+const escalation=[
+ 'Please do not tap the glass.',
+ 'The glass is load-bearing.',
+ 'That order is a historical document.',
+ 'It is also a clerical error.',
+ 'Attempt 5 of ? has been noted in the log.',
+ 'The log is a sticky note.',
+ 'Gerald has stopped writing in the log.',
+ 'Gerald is watching.',
+ 'Gerald is not stopping you.',
+ 'Gerald has taken off his lanyard.'
+];
+function showCracks(n){for(let i=0;i<Math.min(n,cracks.length);i++)cracks[i].style.visibility='visible';}
+function restore(fresh){
+  freed=true;frame.classList.add('shattered');
+  chainPath.style.display='none';
+  stampG.setAttribute('transform','translate(0,0)');
+  caption.textContent='The stamp is free. It wanted this.';
+  setStatus('extant','EXTANT');
+  $('heroStats').innerHTML='Population: <b>2</b> (Gerald, and you). &nbsp;Entered upon the map: <b>today</b>.<br>It is still <b>Tuesday</b>. Some things should stay.';
+  $('geraldLine').textContent='Staff: Gerald, Deputy Sub-Administrator (Acting), and you (Honorary, Acting). Gerald is no longer alone here.';
+  const map=$('mapWrap');map.classList.add('restored');
+  if(fresh&&!reduced)map.classList.add('flickering');
+  $('certificate').style.display='block';
+  document.title='Istoletha Town (On The Map) — Office of Remaining Affairs';
+  if(!fresh){
+    stamp(frame,'APPROVED',true,16,38,true);
+    return;
+  }
+  stamp(frame,'APPROVED',true,16,38);
+  note.textContent='';
+  memo('Gerald wept. In a good way. Gerald wants to be clear it was in a good way.',7000);
+  setTimeout(()=>{ $('certificate').scrollIntoView({behavior:reduced?'auto':'smooth',block:'nearest'}); },1200);
+}
+function hitOrder(){
+  if(freed)return;
+  hits++;store.set('ist_stamps',hits);
+  if(hits>=11){store.set('ist_extant',1);restore(true);renderStanding();return;}
+  frame.classList.remove('hit');void frame.offsetWidth;frame.classList.add('hit');
+  thunk(false);showCracks(hits);
+  note.textContent='Attempt '+hits+' of ? — '+escalation[hits-1];
+  renderStanding();
+}
+frame.addEventListener('click',hitOrder);
+frame.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();hitOrder();}});
+
+/* ── restore persisted state on load ── */
+if(store.get('ist_extant')){
+  unlockBasement();showCracks(11);restore(false);
+}else{
+  if(store.get('ist_irregular')){unlockBasement();setStatus('irregular','IRREGULAR');}
+  if(hits>0)showCracks(hits);
+}
+
+/* ── Form D-11 — Application to Restore the Order of Dissolution ──
+   Everything the visitor has done here lives in four keys. This puts them back.
+   The Office undoes its own resurrection, because the paperwork requires it. */
+const D11_KEYS=['ist_signed','ist_irregular','ist_extant','ist_stamps'];
+const rBtn=$('restoreBtn'),rState=$('restoreState');
+
+function standing(){
+  const acts=[];
+  if(store.get('ist_signed'))acts.push('petition signed');
+  const n=parseInt(store.get('ist_stamps')||'0',10)||0;
+  if(n>0)acts.push('Order struck '+n+' time'+(n===1?'':'s'));
+  if(store.get('ist_extant'))acts.push('town entered upon the map');
+  else if(store.get('ist_irregular'))acts.push('Form B-11 denied');
+  return acts;
+}
+function renderStanding(){
+  const acts=standing();
+  rState.textContent=acts.length
+    ? 'Standing on file: '+acts.join('; ')+'.'
+    : 'Standing on file: nothing. The file is in its original condition.';
+}
+renderStanding();
+
+let countersigned=false;
+rBtn.addEventListener('click',()=>{
+  // Nothing to undo. The Office accepts the application regardless.
+  if(!standing().length){
+    thunk(false);
+    memo('The file is already in its original condition. The Office has accepted your application regardless, and filed it.',5600);
+    return;
+  }
+
+  // One signature is not a procedure.
+  if(!countersigned){
+    countersigned=true;
+    rBtn.dataset.armed='true';
+    rBtn.textContent='Countersign Form D-11';
+    memo('The Office does not act upon a single signature. Countersign, and it will be done.',5000);
+    return;
+  }
+
+  for(const k of D11_KEYS){try{localStorage.removeItem(k)}catch(e){}}
+  thunk(false);
+  rBtn.disabled=true;
+  rBtn.dataset.armed='false';
+  rBtn.textContent='Restored';
+  renderStanding();
+  memo('The Order of Dissolution has been restored. The glass has been replaced. Your signature has been removed from the petition. Gerald does not remember you.',6000);
+  setTimeout(()=>location.reload(),reduced?500:2800);
+});
+})();
+
+/* ══ The Record ═══════════════════════════════════════════════════════════
+   Renders the town from data/ — written by the editor (an agent) out of the
+   real history of the work. Everything below is progressive enhancement: if
+   the data is missing, the town simply has no news, which it is used to. */
+(()=>{
+"use strict";
+const $=id=>document.getElementById(id);
+const SVGNS='http://www.w3.org/2000/svg';
+const el=(t,c)=>{const e=document.createElement(t);if(c)e.className=c;return e;};
+const svgEl=(t,attrs={})=>{
+  const e=document.createElementNS(SVGNS,t);
+  for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);
+  return e;
+};
+const num=n=>n.toLocaleString('en-US');
+
+/* The civic mood maps onto the three chip styles the office already owns. */
+const CHIP={
+  ROUTINE:'routine', DORMANT:'routine', DIMINISHED:'routine',
+  IRREGULAR:'irregular', STRAINED:'irregular', UNSETTLED:'irregular', RESTLESS:'irregular',
+  EXTANT:'extant', BUSY:'extant', ELEVATED:'extant', CEREMONIAL:'extant',
+};
+
+let state=null, index=null;
+const cache=new Map();
+
+/* Served from nginx, the town lives in data/ and we fetch it. Bundled into a
+   single self-contained page (`node townalizer/cli.mjs bundle`), the same data
+   is already sitting on the page, because an artifact may not fetch anything. */
+const get=async p=>{
+  const inl=window.__TOWN__;
+  if(inl){
+    const v = p==='town-state.json' ? inl.state
+            : p==='dispatches/index.json' ? inl.index
+            : inl.dispatches[p.replace('dispatches/','').replace('.json','')];
+    if(!v)throw new Error('not bundled: '+p);
+    return v;
+  }
+  const r=await fetch('data/'+p,{cache:'no-cache'});
+  if(!r.ok)throw new Error(p+': '+r.status);
+  return r.json();
+};
+
+const reducedMotion=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ── related records ──────────────────────────────────────────────────────
+   A single record can appear in three places at once: as a landmark, as a line in
+   a ward's chronicle, and as a notice in an issue. Anything that refers to a record
+   carries data-rel; hovering or focusing it lights every other mention of the same
+   record, wherever it is on the page. One mechanism, used everywhere. */
+function lightRel(sha,on){
+  if(!sha)return;
+  const sel='[data-rel="'+CSS.escape(sha)+'"]';
+  for(const n of document.querySelectorAll(sel))n.classList.toggle('rel-lit',on);
+}
+function wireRel(node,sha){
+  if(!sha)return node;
+  node.dataset.rel=sha;
+  node.addEventListener('mouseenter',()=>lightRel(sha,true));
+  node.addEventListener('mouseleave',()=>lightRel(sha,false));
+  node.addEventListener('focusin',()=>lightRel(sha,true));
+  node.addEventListener('focusout',()=>lightRel(sha,false));
+  return node;
+}
+
+/* ── the route slip ───────────────────────────────────────────────────────
+   The reader's path through the history, so they can walk back out of it. */
+let trail=[];
+
+function renderTrail(){
+  const bar=$('trail');
+  if(!trail.length){bar.hidden=true;return;}
+  bar.hidden=false;
+  const ol=$('trailSteps');
+  ol.textContent='';
+  trail.forEach((s,i)=>{
+    const li=el('li');
+    const b=el('button');
+    b.type='button';
+    b.textContent=s.label;
+    if(i===trail.length-1){
+      b.disabled=true;
+      li.setAttribute('aria-current','true');
+    }else{
+      b.addEventListener('click',()=>gotoStep(i));
+    }
+    li.append(b);
+    ol.append(li);
+  });
+}
+
+function setTrail(steps){ trail=steps; renderTrail(); }
+function pushTrail(step){ trail=[...trail,step]; renderTrail(); }
+
+function gotoStep(i){
+  const s=trail[i];
+  trail=trail.slice(0,i+1);
+  renderTrail();
+  if(s.kind==='ward')  selectWard(s.id,{track:false});
+  if(s.kind==='notice')showDispatch(s.date,s.no,{track:false}).catch(()=>{});
+  if(s.kind==='record')revealRecord(s.ward,s.id);
+}
+
+/* Open a ward and put one particular record of its chronicle in front of the reader. */
+function revealRecord(wardId,sha){
+  selectWard(wardId,{track:false});
+  requestAnimationFrame(()=>{
+    const row=document.querySelector('#wfBody .chron li[data-rel="'+CSS.escape(sha)+'"]');
+    if(!row)return;
+    row.scrollIntoView({behavior:reducedMotion()?'auto':'smooth',block:'center'});
+    lightRel(sha,true);
+    setTimeout(()=>lightRel(sha,false),2200);
+  });
+}
+
+/* ── one notice, with the true record folded underneath it ── */
+function noticeEl(n,date){
+  const d=el('div','rec-notice');
+  d.dataset.no=n.no;
+  d.dataset.date=date;
+  const flag=el('div','flag');
+  flag.textContent='Cross-referenced from the ward file';
+  const no=el('span','no'); no.textContent='NOTICE №'+n.no;
+  const h=el('h4'); h.textContent=n.title;
+  const p=el('p'); p.textContent=n.body;
+  d.append(flag,no,h,p);
+
+  const t=n.truth;
+  if(!t)return d;
+
+  const btn=el('button','truth');
+  btn.type='button';
+  btn.textContent='What actually happened';
+  btn.setAttribute('aria-expanded','false');
+
+  const box=el('div','truthbox');
+  const line1=el('div');
+  const sha=el('span','t-sha'); sha.textContent=t.id;
+  line1.append(sha,document.createTextNode(' · '+t.actor+' · '+String(t.timestamp).slice(0,10)));
+  const line2=el('div');
+  const msg=el('span','t-msg'); msg.textContent='“'+t.title+'”';
+  line2.append(msg);
+  const line3=el('div');
+  line3.textContent=t.kind+' · '+num(t.churn)+' lines · '
+    +t.files+' file'+(t.files===1?'':'s');
+  box.append(line1,line2,line3);
+
+  /* Where this happened. The record points back into the town, so the reader can
+     walk from the news to the place and keep going. */
+  const wards=(t.wards||[]).filter(w=>state&&state.wards[w]);
+  if(wards.length){
+    const line4=el('div','t-wards');
+    line4.append(document.createTextNode('in '));
+    wards.forEach((wid,i)=>{
+      if(i)line4.append(document.createTextNode(', '));
+      const b=el('button','t-ward');
+      b.type='button';
+      b.textContent=state.wards[wid].name;
+      b.addEventListener('click',()=>{
+        setTrail([
+          {kind:'notice',date,no:n.no,label:'Issue №'+n.no},
+          {kind:'ward',id:wid,label:'Ward: '+state.wards[wid].name},
+        ]);
+        revealRecord(wid,t.id);
+      });
+      line4.append(b);
+    });
+    box.append(line4);
+  }
+
+  const cap=el('span','t-cap');
+  cap.textContent='The town does not print rumours.';
+  box.append(cap);
+
+  const setOpen=open=>{
+    box.classList.toggle('open',open);
+    btn.setAttribute('aria-expanded',String(open));
+    btn.textContent=open?'Close the record':'What actually happened';
+    // Closing the record also puts the notice back on the shelf: the cross-reference
+    // flag and its stamp were only ever there to say "this is the one you followed".
+    if(!open)d.classList.remove('flagged');
+  };
+  btn.addEventListener('click',()=>setOpen(!box.classList.contains('open')));
+  // A reader who arrived here from a record wants to see that record, not be
+  // invited to ask for it.
+  d._openTruth=()=>setOpen(true);
+  d.append(btn,box);
+
+  /* The notice is itself a mention of the record — light it with the others. */
+  wireRel(d,t.id);
+  return d;
+}
+
+/**
+ * @param {string} date
+ * @param {string} [focusNo]  a notice number ("11-066") to flag and reveal — used
+ *                            when the reader followed a record here from a ward file.
+ * @param {object} [opts]     {track:false} when re-entering from the route slip, so
+ *                            walking back does not append to the path you walked.
+ */
+async function showDispatch(date,focusNo,opts={}){
+  let d=cache.get(date);
+  if(!d){ d=await get('dispatches/'+date+'.json'); cache.set(date,d); }
+
+  $('recordEmpty').hidden=true;
+  $('latestDispatch').hidden=false;
+
+  $('issueNo').textContent='#'+d.issue;
+  $('issueDate').textContent=date;
+  $('issueDate').setAttribute('datetime',date);
+
+  const mag=d.provenance?.churn>=2000?'monumental'
+           :d.provenance?.churn>=500?'major'
+           :d.provenance?.churn>=100?'notable'
+           :d.provenance?.churn>=10?'minor':'trivial';
+  $('issueMag').textContent=mag;
+  $('issueMag').dataset.m=mag;
+
+  const rec=d.provenance?.records;
+  $('issueProv').textContent=rec
+    ? '· from '+rec+' record'+(rec===1?'':'s')+' in the history'
+    : '';
+
+  $('headline').textContent=d.headline;
+  $('standfirst').textContent=d.standfirst;
+
+  const list=$('noticeList');
+  list.textContent='';
+  for(const n of d.notices)list.append(noticeEl(n,date));
+
+  if(d.minute){
+    $('minuteBox').hidden=false;
+    $('minuteSess').textContent=d.minute.session;
+    $('minuteText').textContent=d.minute.text;
+  }else{
+    $('minuteBox').hidden=true;
+  }
+
+  $('geraldSign').textContent=d.gerald+' — G.';
+
+  /* the marquee carries the day's lines */
+  if(Array.isArray(d.ticker)&&d.ticker.length){
+    const track=document.querySelector('.ticker .track');
+    if(track){
+      track.textContent='';
+      const b=el('b'); b.textContent='NOTICE:';
+      track.append(b,document.createTextNode(' '+d.ticker.join('  •  ')+'  •  '));
+    }
+  }
+
+  for(const li of $('archList').children){
+    li.setAttribute('aria-current',String(li.dataset.date===date));
+  }
+
+  /* If the reader followed a record here, say plainly which notice it became:
+     flag it, open the record underneath it, and put it in front of them. */
+  const target=focusNo
+    ? list.querySelector('.rec-notice[data-no="'+CSS.escape(focusNo)+'"]')
+    : null;
+  if(target){
+    target.classList.add('flagged');
+    target.setAttribute('tabindex','-1');
+    if(target._openTruth)target._openTruth();
+    // let layout settle before scrolling, or we land short
+    requestAnimationFrame(()=>{
+      target.scrollIntoView({behavior:reducedMotion()?'auto':'smooth',block:'center'});
+      target.focus({preventScroll:true});
+    });
+  }
+  /* No focus target means an ordinary read — leave the page where the reader put it. */
+}
+
+function renderArchive(){
+  if(index.dispatches.length<2)return;
+  $('archive').hidden=false;
+  const ul=$('archList');
+  ul.textContent='';
+  for(const d of index.dispatches){
+    const li=el('li');
+    li.dataset.date=d.date;
+    const t=el('time'); t.dateTime=d.date; t.textContent=d.date;
+    const b=el('button'); b.type='button';
+    b.textContent='#'+d.issue+' — '+d.headline;
+    b.addEventListener('click',()=>showDispatch(d.date).catch(()=>{}));
+    li.append(t,b);
+    ul.append(li);
+  }
+}
+
+/* ── the town, drawn from what the history actually built ── */
+function renderSurvey(){
+  const wards=Object.values(state.wards)
+    .sort((a,b)=>(a.firstSeen<b.firstSeen?-1:a.firstSeen>b.firstSeen?1:a.id<b.id?-1:1));
+  if(!wards.length)return;
+  $('survey').hidden=false;
+
+  const svg=$('surveySvg');
+  svg.textContent='';
+  const COLS=3, PW=126, PH=76, GAP=6, PAD=6;
+  const rows=Math.ceil(wards.length/COLS);
+  const W=PAD*2+COLS*PW+(COLS-1)*GAP;
+  const H=PAD*2+rows*PH+(rows-1)*GAP;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+
+  wards.forEach((w,i)=>{
+    const x=PAD+(i%COLS)*(PW+GAP);
+    const y=PAD+Math.floor(i/COLS)*(PH+GAP);
+    const cond=w.condition||'fair';
+    const n0=w.buildings.length;
+    const g=svgEl('g',{
+      class:'plot-hit',
+      role:'button',
+      tabindex:'0',
+      'data-ward':w.id,
+      'aria-label':`${w.name}: ${n0} structure${n0===1?'':'s'}, ${cond}. Open the ward file.`,
+    });
+    g.addEventListener('click',()=>selectWard(w.id));
+    g.addEventListener('keydown',e=>{
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();selectWard(w.id);}
+    });
+
+    g.append(svgEl('rect',{class:'plot','data-c':cond,'data-sel':'false',x,y,width:PW,height:PH}));
+
+    const name=svgEl('text',{class:'plot-name',x:x+6,y:y+13});
+    name.textContent=w.name;
+    g.append(name);
+
+    const meta=svgEl('text',{class:'plot-meta',x:x+6,y:y+22});
+    const n=w.buildings.length;
+    meta.textContent=n+' structure'+(n===1?'':'s')+' · '+cond;
+    g.append(meta);
+
+    /* one mark per structure, up to a point; the town stops counting politely */
+    const PER=16, MAX=32;
+    const shown=Math.min(n,MAX);
+    for(let k=0;k<shown;k++){
+      const bx=x+7+(k%PER)*7.3;
+      const by=y+34+Math.floor(k/PER)*11;
+      g.append(svgEl('rect',{class:'bldg','data-c':cond,x:bx,y:by,width:5,height:7}));
+    }
+    if(n>MAX){
+      const more=svgEl('text',{class:'plot-meta',x:x+7,y:y+PH-6});
+      more.textContent='+'+(n-MAX)+' more, unvisited';
+      g.append(more);
+    }
+
+    /* landmarks stand in their ward, in gold, forever */
+    const lms=state.landmarks.filter(l=>l.ward===w.id);
+    lms.slice(0,6).forEach((l,k)=>{
+      const lx=x+PW-10-k*9, ly=y+PH-9;
+      const dia=svgEl('polygon',{
+        class:'lmk',
+        points:`${lx},${ly-4} ${lx+4},${ly} ${lx},${ly+4} ${lx-4},${ly}`,
+      });
+      const title=svgEl('title');
+      title.textContent=l.name+(l.note?' — '+l.note:'');
+      dia.append(title);
+      g.append(dia);
+    });
+
+    const wt=svgEl('title');
+    wt.textContent=`${w.name} — ${n} structure${n===1?'':'s'}, ${cond}`
+      +(w.note?`. ${w.note}`:'');
+    g.append(wt);
+    svg.append(g);
+  });
+}
+
+/* ── the ward file ──
+   Every record in a ward's chronicle may also have been *reported* — written up as a
+   notice in some issue. We build that lookup once, from every dispatch, so a visitor
+   standing in a place can jump straight to the day the town wrote about it. */
+let originIndex=null;
+async function buildOriginIndex(){
+  if(originIndex)return originIndex;
+  const all=await Promise.all(index.dispatches.map(async d=>{
+    let full=cache.get(d.date);
+    if(!full){ full=await get('dispatches/'+d.date+'.json'); cache.set(d.date,full); }
+    return full;
+  }));
+  originIndex=new Map();
+  for(const d of all){
+    for(const n of d.notices){
+      originIndex.set(String(n.origin),{date:d.date,issue:d.issue,no:n.no,title:n.title});
+    }
+  }
+  return originIndex;
+}
+
+const KIND_LABEL={
+  works:'works', repair:'repair', demolition:'razed', resurvey:'resurvey',
+  retraction:'retracted', treaty:'treaty', annexation:'annexed',
+  inspection:'inspected', signage:'signage', filing:'filing', founding:'founding',
+};
+
+function selectWard(id,opts={}){
+  const w=state.wards[id];
+  if(!w)return;
+
+  // Opening a ward from the map starts a fresh route; re-entering it from the
+  // route slip does not.
+  if(opts.track!==false)setTrail([{kind:'ward',id,label:'Ward: '+w.name}]);
+
+  for(const r of document.querySelectorAll('#surveySvg .plot')){
+    r.setAttribute('data-sel',String(r.parentNode.dataset.ward===id));
+  }
+
+  $('wardFile').hidden=false;
+  $('wfName').textContent='Ward File — '+w.name;
+
+  const body=$('wfBody');
+  body.textContent='';
+
+  if(w.note){
+    const p=el('p','wf-note');
+    p.textContent=w.note;
+    body.append(p);
+  }
+
+  const stats=el('div','wf-stats');
+  const cond=el('span','cond');
+  cond.dataset.c=w.condition||'fair';
+  cond.textContent=w.condition||'fair';
+  const s1=el('span');
+  s1.append(document.createTextNode('Structures on the register: '),Object.assign(el('b'),{textContent:num(w.buildings.length)}));
+  const s2=el('span');
+  s2.append(document.createTextNode('Works recorded: '),Object.assign(el('b'),{textContent:num(w.churn)+' units'}));
+  const s3=el('span');
+  s3.append(document.createTextNode('First surveyed: '),Object.assign(el('b'),{textContent:w.firstSeen}));
+  const s4=el('span');
+  s4.append(document.createTextNode('Last visited: '),Object.assign(el('b'),{textContent:w.lastSeen}));
+  stats.append(cond,s1,s2,s3,s4);
+  body.append(stats);
+
+  /* landmarks standing here */
+  const lms=state.landmarks.filter(l=>l.ward===id);
+  if(lms.length){
+    const h=el('div','wf-sub'); h.textContent='Landmarks';
+    const ul=el('ul','lmk-list');
+    for(const l of lms){
+      const li=el('li');
+      const b=el('b'); b.textContent=l.name;
+      li.append(b,document.createTextNode(' — raised '+l.raisedOn));
+      if(l.note){
+        const i=el('i');
+        i.textContent=' '+l.note;
+        li.append(document.createElement('br'),i);
+      }
+      // A landmark was raised by a record. Hovering lights that record wherever it
+      // appears; the chronicle can be long, so clicking goes and finds it.
+      if(l.origin){
+        li.tabIndex=0;
+        li.setAttribute('role','button');
+        li.title='Raised by record '+l.origin+'. Select to find it in the chronicle.';
+        wireRel(li,l.origin);
+        const go=()=>revealRecord(id,l.origin);
+        li.addEventListener('click',go);
+        li.addEventListener('keydown',e=>{
+          if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}
+        });
+      }
+      ul.append(li);
+    }
+    body.append(h,ul);
+  }
+
+  /* the register of structures — the actual things standing in this place */
+  if(w.buildings.length){
+    const det=el('details');
+    const sum=el('summary','wf-sub');
+    sum.style.cursor='pointer';
+    sum.textContent='Register of Structures ('+w.buildings.length+')';
+    const ul=el('ul','struct-list');
+    for(const b of [...w.buildings].sort()){
+      const li=el('li');
+      li.textContent=b;
+      ul.append(li);
+    }
+    det.append(sum,ul);
+    body.append(det);
+  }
+
+  /* the chronicle: what was really done here, newest first */
+  const h2=el('div','wf-sub');
+  h2.textContent='Chronicle — '+w.events.length+' record'+(w.events.length===1?'':'s');
+  body.append(h2);
+
+  const ul2=el('ul','chron');
+  const events=[...w.events].reverse();
+  for(const ev of events){
+    const li=el('li');
+    li.tabIndex=0;
+    wireRel(li,ev.id);   // the other end of the landmark's thread
+    const t=el('time'); t.dateTime=ev.date; t.textContent=ev.date;
+    const k=el('span','k'); k.dataset.k=ev.kind; k.textContent=KIND_LABEL[ev.kind]||ev.kind;
+    const d=el('div');
+    const title=el('div'); title.textContent=ev.title;
+    const who=el('div','who');
+    const sha=el('span','sha'); sha.textContent=ev.id;
+    who.append(sha,document.createTextNode(' · '+ev.actor+' · '+num(ev.churn)+' units'));
+    d.append(title,who);
+    li.append(t,k,d);
+    ul2.append(li);
+  }
+  body.append(ul2);
+
+  /* then, asynchronously, mark the records the town actually wrote about */
+  buildOriginIndex().then(idx=>{
+    events.forEach((ev,i)=>{
+      const hit=idx.get(ev.id);
+      if(!hit)return;
+      const d=ul2.children[i]?.lastChild;
+      if(!d)return;
+      const b=el('button','rep');
+      b.type='button';
+      b.textContent='Reported in Issue #'+hit.issue+' — Notice №'+hit.no;
+      b.addEventListener('click',()=>{
+        // ward → record → notice: the whole route, so the reader can walk back.
+        setTrail([
+          {kind:'ward',id,label:'Ward: '+w.name},
+          {kind:'record',id:ev.id,ward:id,label:'Record '+ev.id},
+          {kind:'notice',date:hit.date,no:hit.no,label:'Issue #'+hit.issue+' №'+hit.no},
+        ]);
+        showDispatch(hit.date,hit.no).catch(()=>{});
+      });
+      d.append(b);
+    });
+  }).catch(()=>{});
+
+  $('wardFile').scrollIntoView({behavior:reducedMotion()?'auto':'smooth',block:'nearest'});
+}
+
+function closeWard(){
+  $('wardFile').hidden=true;
+  for(const r of document.querySelectorAll('#surveySvg .plot'))r.setAttribute('data-sel','false');
+}
+
+function renderRolls(){
+  const box=$('rolls');
+  box.textContent='';
+  const cits=Object.values(state.citizens).sort((a,b)=>b.acts-a.acts);
+  for(const c of cits){
+    const d=el('div','roll');
+    d.dataset.bot=String(!!c.automated);
+    const nm=el('b'); nm.textContent=c.name;
+    d.append(nm,document.createTextNode(' · '+num(c.acts)+' act'+(c.acts===1?'':'s')));
+    if(c.epithet){
+      const ep=el('span','ep');
+      ep.textContent=' — '+c.epithet;
+      d.append(ep);
+    }
+    box.append(d);
+  }
+  const souls=el('div','roll');
+  souls.style.background='#eee9d9';
+  souls.innerHTML='';
+  const b=el('b'); b.textContent='Population: 0';
+  souls.append(b,document.createTextNode(' · '+state.civic.souls+' on the rolls'));
+  box.append(souls);
+}
+
+function renderSagas(){
+  const wrap=$('sagas');
+  wrap.textContent='';
+  if(!state.sagas.length)return;
+  $('sagaHead').hidden=false;
+  for(const s of state.sagas){
+    const d=el('div','saga');
+    d.dataset.s=s.status;
+    const h=el('h4');
+    h.textContent=s.title+(s.status==='ongoing'?'':' ('+s.status+')');
+    const last=s.beats[s.beats.length-1];
+    const p=el('p','beat');
+    p.textContent=last?last.text:'';
+    const meta=el('p','beat');
+    meta.style.opacity='.75';
+    meta.textContent=s.beats.length+' entr'+(s.beats.length===1?'y':'ies')
+      +' · opened '+s.openedOn;
+    d.append(h,p,meta);
+    wrap.append(d);
+  }
+}
+
+/* The chip belongs to the visitor's own story first; the town's mood is only
+   shown to people who have not yet started meddling with the Order. */
+function applyTownStatus(){
+  let touched=false;
+  try{
+    touched=!!(localStorage.getItem('ist_extant')||localStorage.getItem('ist_irregular'));
+  }catch(e){}
+  if(touched)return;
+  const word=state.civic.status||'ROUTINE';
+  const chip=$('statusChip');
+  chip.dataset.state=CHIP[word]||'routine';
+  $('statusWord').textContent=word;
+  const tip=chip.querySelector('.tip');
+  if(tip&&state.civic.statusNote){
+    tip.textContent='“'+state.civic.statusNote+'” — G.';
+  }
+}
+
+(async()=>{
+  try{
+    [state,index]=await Promise.all([get('town-state.json'),get('dispatches/index.json')]);
+  }catch(e){
+    return; /* no record today. the town endures this regularly. */
+  }
+  if(!index.dispatches||!index.dispatches.length)return;
+  try{
+    renderArchive();
+    await showDispatch(index.dispatches[0].date);
+    renderSurvey();
+    renderRolls();
+    renderSagas();
+    applyTownStatus();
+
+    $('wfClose').addEventListener('click',()=>{closeWard();setTrail([]);});
+    $('trailClear').addEventListener('click',()=>setTrail([]));
+    addEventListener('keydown',e=>{
+      if(e.key!=='Escape')return;
+      if(!$('wardFile').hidden)closeWard();
+      setTrail([]);
+    });
+  }catch(e){
+    /* a partial town is still a town */
+  }
+})();
+})();
+</script>
+</body>
+</html>

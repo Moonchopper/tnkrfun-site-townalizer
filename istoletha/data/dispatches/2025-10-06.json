@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "date": "2025-10-06",
+  "issue": 4,
+  "headline": "The Hall of Records Is Completed. The Town Then Stops.",
+  "standfirst": "Three acts of maintenance are recorded, in good order, by a man who locks up at nine and does not say anything. Nothing about the day indicates what follows it.",
+  "notices": [
+    {
+      "no": "11-058",
+      "title": "The Hall of Records",
+      "body": "The Hall of Records has been completed to its full extent: seven structures, raised in a single sitting, to hold the papers of a town that has produced almost none. The Hall is sound. The Hall is well lit. The Hall is, at the time of going to press, empty, and the Office wishes to record that this is a matter of timing and not of design.",
+      "origin": "06f2ae6",
+      "truth": {
+        "id": "06f2ae6",
+        "actor": "David Morgan",
+        "title": "initial helm version",
+        "kind": "works",
+        "churn": 273,
+        "files": 7,
+        "wards": [
+          "helm"
+        ],
+        "timestamp": "2025-10-06T03:55:43Z"
+      }
+    },
+    {
+      "no": "11-059",
+      "title": "Compliance",
+      "body": "A name was found not to comply with a standard, and was amended until it complied with the standard. The standard is not reproduced here. It is not necessary that you know what the standard is. It is necessary only that it has been met, and it has been met, and the Office has moved on to the next thing, of which there is not one.",
+      "origin": "fcc2616",
+      "truth": {
+        "id": "fcc2616",
+        "actor": "David Morgan",
+        "title": "fixed helper to be DNS-1035-compliant for fullname",
+        "kind": "repair",
+        "churn": 15,
+        "files": 1,
+        "wards": [
+          "helm"
+        ],
+        "timestamp": "2025-10-06T13:31:38Z"
+      }
+    }
+  ],
+  "ticker": [
+    "The Hall of Records is complete and empty.",
+    "One name now complies with a standard.",
+    "The pothole on Mill Rd remains scheduled for consideration for scheduling.",
+    "Office hours remain Tuesday."
+  ],
+  "minute": {
+    "session": "417th Ordinary Session — Tuesday",
+    "text": "Agenda item 1: completion of the Hall of Records. Carried 1–0 (Gerald), with commendation. Agenda item 2: what is to be kept in it. Deferred. Agenda item 3: motion to adjourn. Denied, there being nowhere to go. The session closed at nine in the evening, and was not reconvened for one hundred and seventy-eight days, though nobody present was aware of that at the time, there having been nobody present."
+  },
+  "gerald": "He locked up at nine and did not say anything. There was nothing to say. I did not know it was the last of it. You never do, and I would not have said anything either.",
+  "stateChanges": {
+    "status": "ROUTINE",
+    "statusNote": "Routine is a choice we make daily.",
+    "landmarks": [
+      {
+        "name": "The Hall of Records",
+        "ward": "helm",
+        "note": "Completed to specification. Immediately, and lastingly, unused.",
+        "origin": "06f2ae6"
+      }
+    ]
+  },
+  "provenance": {
+    "source": "git",
+    "repo": "tnkrfun-site-townalizer",
+    "records": 3,
+    "churn": 357,
+    "generatedAt": null,
+    "editor": "claude"
+  }
+}

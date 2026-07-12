@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "date": "2025-10-02",
+  "issue": 2,
+  "headline": "Public Grounds Laid Out; The Town's Address Is Changed Four Times Before Dawn",
+  "standfirst": "Seventeen structures are raised in a single evening by one man working alone. He then spends eighty minutes deciding where the town lives, and arrives back where he began.",
+  "notices": [
+    {
+      "no": "11-052",
+      "title": "Public Works — The First Structures",
+      "body": "Seventeen structures were raised upon the Public Grounds in the course of one evening. The works are substantial and were carried out by a single man, unassisted, at an hour when this Office was closed. This Office was closed. This Office is always closed, and always open, a condition the Office has stopped attempting to explain to visitors, there being none. The works proceeded regardless and stand this morning.",
+      "origin": "0da3514",
+      "truth": {
+        "id": "0da3514",
+        "actor": "David Morgan",
+        "title": "initial version",
+        "kind": "works",
+        "churn": 442,
+        "files": 17,
+        "wards": [
+          ".github",
+          "(root)",
+          "manifests",
+          "site"
+        ],
+        "timestamp": "2025-10-02T00:12:06Z"
+      }
+    },
+    {
+      "no": "11-053",
+      "title": "The Question of the Address",
+      "body": "The town's address was amended at eighteen minutes past midnight. It was amended again at twenty-three minutes past one. At twenty-nine minutes past one it was restored to the form it had held before either amendment. At thirty-two minutes past one it was amended a final time, after which the man went to bed. The address is now what it was. The Office considers the matter settled, and is not confident.",
+      "origin": "74b3722",
+      "truth": {
+        "id": "74b3722",
+        "actor": "David Morgan",
+        "title": "replaced URL again",
+        "kind": "works",
+        "churn": 2,
+        "files": 1,
+        "wards": [
+          "manifests"
+        ],
+        "timestamp": "2025-10-02T01:32:58Z"
+      }
+    },
+    {
+      "no": "11-054",
+      "title": "Repairs",
+      "body": "Two repairs were effected: an address entered incorrectly, and a misspelling in paperwork that does not yet belong to anyone. No officer has been appointed to that paperwork. The Office therefore holds no one responsible, which is among the few services the Office is still equipped to provide.",
+      "origin": "ee1d0b9",
+      "truth": {
+        "id": "ee1d0b9",
+        "actor": "David Morgan",
+        "title": "fixed incorrect repo url",
+        "kind": "repair",
+        "churn": 2,
+        "files": 1,
+        "wards": [
+          "manifests"
+        ],
+        "timestamp": "2025-10-02T01:27:10Z"
+      }
+    }
+  ],
+  "ticker": [
+    "Seventeen structures raised overnight on the Public Grounds.",
+    "The address has been amended four times and is now unchanged.",
+    "Residents are reminded that there are no residents.",
+    "Office hours remain Tuesday."
+  ],
+  "minute": {
+    "session": "415th Ordinary Session — also Tuesday",
+    "text": "Agenda item 1: the address. Moved that the address be settled. Moved that the address be settled differently. Both motions carried 1–0 (Gerald), the second superseding the first, and the first superseding the second by the close of business. Agenda item 2: the seventeen structures. No motion was raised. It was felt that raising a motion about them would be less than they deserved."
+  },
+  "gerald": "He worked until half past one in the morning. I stayed. I always stay. Last night I stayed on purpose, and I would like that noted somewhere it will not be read.",
+  "stateChanges": {
+    "status": "RESTLESS",
+    "statusNote": "Seventeen structures and one unresolved address.",
+    "landmarks": [
+      {
+        "name": "The First Structures",
+        "ward": "site",
+        "note": "Seventeen, raised in a single evening, by one man, for no one.",
+        "origin": "0da3514"
+      }
+    ],
+    "sagas": [
+      {
+        "id": "the-question-of-the-address",
+        "title": "The Question of the Address",
+        "beat": {
+          "text": "Amended four times in eighty minutes and returned, exhausted, to its original form.",
+          "origin": "74b3722"
+        }
+      }
+    ],
+    "epithets": {
+      "david-morgan": "the Works Department, entire"
+    },
+    "wardNotes": {
+      "site": "The Public Grounds. Everything of consequence happens here, at night."
+    }
+  },
+  "provenance": {
+    "source": "git",
+    "repo": "tnkrfun-site-townalizer",
+    "records": 7,
+    "churn": 452,
+    "generatedAt": null,
+    "editor": "claude"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "date": "2026-07-09",
+  "issue": 9,
+  "headline": "An Office Is Raised For A District That Does Not Exist",
+  "standfirst": "After sixty-one days of silence, six structures appear in a quarter the ledger has not previously acknowledged. They are dedicated to the administration of a district dissolved in 1994.",
+  "notices": [
+    {
+      "no": "11-071",
+      "title": "The Old Town",
+      "body": "Six structures were raised in a single evening in a quarter now designated the Old Town. They house an Office of Remaining Affairs, established to administer District 11, which was dissolved in 1994 by clerical error, and which has no population, no boundaries, no revenue, and no business. A man has been placed in the Office. He is described in the papers as being always there. This Office notes the existence of that Office. This Office has no further comment at this time, and has been unable to settle on one since.",
+      "origin": "4c88722",
+      "truth": {
+        "id": "4c88722",
+        "actor": "David Morgan",
+        "title": "Add host-based routing + District 11 parking site (Office of Remaining Affairs)",
+        "kind": "works",
+        "churn": 791,
+        "files": 6,
+        "wards": [
+          ".github",
+          "(root)",
+          "district11",
+          "nginx"
+        ],
+        "timestamp": "2026-07-09T20:56:38-04:00"
+      }
+    },
+    {
+      "no": "11-072",
+      "title": "The Seal",
+      "body": "The seal of District 11 was enlarged so that the text about its ring might be read. It reads ADHUC HIC. It has always read ADHUC HIC. Nobody had been able to make it out until now, and, the Office is obliged to record, nobody had asked.",
+      "origin": "4b6d085",
+      "truth": {
+        "id": "4b6d085",
+        "actor": "David Morgan",
+        "title": "Enlarge masthead seal so the ring text is readable",
+        "kind": "works",
+        "churn": 7,
+        "files": 1,
+        "wards": [
+          "district11"
+        ],
+        "timestamp": "2026-07-09T21:10:23-04:00"
+      }
+    },
+    {
+      "no": "11-073",
+      "title": "Ratification",
+      "body": "A treaty was ratified admitting the Old Town to the parcel. It was proposed by one man and accepted by the same man, who then filed it. The Office finds the procedure irregular and the outcome entirely satisfactory, and observes that this has been true of every proceeding it has ever conducted.",
+      "origin": "2c2b380",
+      "truth": {
+        "id": "2c2b380",
+        "actor": "David Morgan",
+        "title": "Merge pull request #2 from dsmorgan/district11-parking",
+        "kind": "treaty",
+        "churn": 0,
+        "files": 0,
+        "wards": [],
+        "timestamp": "2026-07-09T21:03:23-04:00"
+      }
+    }
+  ],
+  "ticker": [
+    "An Office of Remaining Affairs has been raised in the Old Town.",
+    "It administers a district dissolved in 1994.",
+    "The seal has been enlarged. It reads ADHUC HIC. It always did.",
+    "There is a man in that office. He is always there."
+  ],
+  "minute": {
+    "session": "422nd Ordinary Session — Tuesday",
+    "text": "Agenda item 1: the Old Town, and the Office within it. A motion of welcome was moved and seconded, the seconding being irregular in a body of one, and was carried 1–0 (Gerald). The Chair then requested a short adjournment. The request was denied, there being nowhere to go, and the Chair remained in his seat for some time without speaking, which has been minuted as a period of reflection."
+  },
+  "gerald": "They have built an office for a place that is not there, and they have put a man inside it, and they have written that he is always there. I have read the notice three times. I do not know why it upsets me.",
+  "stateChanges": {
+    "status": "CEREMONIAL",
+    "statusNote": "An office has been raised for a district that does not exist. It is the finest building in the town.",
+    "landmarks": [
+      {
+        "name": "The Office of Remaining Affairs",
+        "ward": "district11",
+        "note": "Raised in one evening to administer a district dissolved in 1994. It is still standing. It is still staffed.",
+        "origin": "4c88722"
+      }
+    ],
+    "sagas": [
+      {
+        "id": "the-old-town",
+        "title": "The Old Town",
+        "beat": {
+          "text": "An office was raised for a district dissolved in 1994. It is the finest building in the town, and it administers nothing.",
+          "origin": "4c88722"
+        }
+      }
+    ],
+    "wardNotes": {
+      "district11": "The Old Town. The parcel we are standing in. The Office does not hold documents relating to the transfer."
+    }
+  },
+  "provenance": {
+    "source": "git",
+    "repo": "tnkrfun-site-townalizer",
+    "records": 3,
+    "churn": 798,
+    "generatedAt": null,
+    "editor": "claude"
+  }
+}

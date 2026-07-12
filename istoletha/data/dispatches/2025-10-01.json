@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "date": "2025-10-01",
+  "issue": 1,
+  "headline": "The Ledger Is Opened; It Contains One Line",
+  "standfirst": "A single document is deposited upon the parcel. It describes what is intended here. Nothing is undertaken. The Office files the document and waits, which is the work.",
+  "notices": [
+    {
+      "no": "11-050",
+      "title": "Opening of the Ledger",
+      "body": "A document was deposited upon the parcel at twenty-six minutes past ten in the evening, by a person recorded in our books only as dsmorgan. The document consists of one line. The line describes the works intended here. No works have been undertaken. The Office has entered the document in the ledger, assigned it a number, and placed it where such things are placed. The town is older than its ledger. The ledger is what we have.",
+      "origin": "c3a800b",
+      "truth": {
+        "id": "c3a800b",
+        "actor": "dsmorgan",
+        "title": "Initial commit",
+        "kind": "founding",
+        "churn": 1,
+        "files": 1,
+        "wards": [
+          "(root)"
+        ],
+        "timestamp": "2025-10-01T18:26:29-04:00"
+      }
+    },
+    {
+      "no": "11-051",
+      "title": "Concerning the Hour",
+      "body": "The deposit was made outside office hours. Office hours are Tuesday. The Office records this without prejudice, as it records everything without prejudice, prejudice requiring a second party.",
+      "origin": "c3a800b",
+      "truth": {
+        "id": "c3a800b",
+        "actor": "dsmorgan",
+        "title": "Initial commit",
+        "kind": "founding",
+        "churn": 1,
+        "files": 1,
+        "wards": [
+          "(root)"
+        ],
+        "timestamp": "2025-10-01T18:26:29-04:00"
+      }
+    }
+  ],
+  "ticker": [
+    "The ledger is open.",
+    "The ledger contains one line.",
+    "Office hours remain Tuesday.",
+    "There is no further news. This is the news."
+  ],
+  "minute": {
+    "session": "414th Ordinary Session — Tuesday",
+    "text": "Agenda item 1: the document. Motion to acknowledge that a document exists. Carried 1–0 (Gerald). Agenda item 2: none. Agenda item 3: none. The session was adjourned early, and then unadjourned, on the grounds that there was nowhere to adjourn to."
+  },
+  "gerald": "Somebody has written something down about this place. I have not read it twice, in case it says less the second time.",
+  "stateChanges": {
+    "status": "CEREMONIAL",
+    "statusNote": "A ledger has been opened. This is the most that has happened here in some years.",
+    "landmarks": [
+      {
+        "name": "The Ledger Stone",
+        "ward": "(root)",
+        "note": "The parcel's first document, and for one day its only one.",
+        "origin": "c3a800b"
+      }
+    ],
+    "epithets": {
+      "dsmorgan": "the Depositor, who did not stay"
+    }
+  },
+  "provenance": {
+    "source": "git",
+    "repo": "tnkrfun-site-townalizer",
+    "records": 1,
+    "churn": 1,
+    "generatedAt": null,
+    "editor": "claude"
+  }
+}

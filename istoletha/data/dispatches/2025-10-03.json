@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "date": "2025-10-03",
+  "issue": 3,
+  "headline": "A Clerk Is Appointed. It Files Twice. It Says Nothing.",
+  "standfirst": "The Hall of Records is enlarged. A treaty is ratified between the town and the town. An officer begins work that will not conclude.",
+  "notices": [
+    {
+      "no": "11-055",
+      "title": "Appointment of the Clerk",
+      "body": "An officer has taken up duties at the Register. Its first act was to file notice that the works had been carried out. Its second act was to file notice that the works had been carried out. The two filings are identical, correct, and complete in every particular. The Clerk has made no request for accommodation, salary, hours, or acknowledgement, and the Office, in its turn, has offered none. The arrangement appears to suit both parties. The Office has not asked.",
+      "origin": "0033075",
+      "truth": {
+        "id": "0033075",
+        "actor": "github-actions[bot]",
+        "title": "ci: update deployment to",
+        "kind": "filing",
+        "churn": 2,
+        "files": 1,
+        "wards": [
+          "manifests"
+        ],
+        "timestamp": "2025-10-03T04:44:33Z"
+      }
+    },
+    {
+      "no": "11-056",
+      "title": "Ratification",
+      "body": "A treaty was ratified between the town and the town. Both parties were represented by the same man. Both parties agreed. The instrument moves no boundary, transfers no property, and settles no dispute, there having been no dispute. It has been placed in the Hall of Records, where it will be safe, and where it will be alone.",
+      "origin": "5e3bcf6",
+      "truth": {
+        "id": "5e3bcf6",
+        "actor": "David Morgan",
+        "title": "≈Merge branch 'main' of https://github.com/dsmorgan/tnkrfun-site",
+        "kind": "treaty",
+        "churn": 0,
+        "files": 0,
+        "wards": [],
+        "timestamp": "2025-10-03T04:40:51Z"
+      }
+    },
+    {
+      "no": "11-057",
+      "title": "Repairs, Various",
+      "body": "Three repairs were effected in the course of the day, among them a correction to the wording of the Clerk's own notices, and the removal of a full stop from a place where no full stop was wanted. The Office does not regard a full stop as a small matter. The Office regards nothing as a small matter, having nothing larger with which to compare it.",
+      "origin": "2fbb1eb",
+      "truth": {
+        "id": "2fbb1eb",
+        "actor": "David Morgan",
+        "title": "fixed commit message in action",
+        "kind": "repair",
+        "churn": 2,
+        "files": 1,
+        "wards": [
+          ".github"
+        ],
+        "timestamp": "2025-10-03T03:45:34Z"
+      }
+    }
+  ],
+  "ticker": [
+    "A Clerk has been appointed to the Hall of Records.",
+    "The Clerk has filed twice and requested nothing.",
+    "A treaty has been ratified. Both parties were satisfied and identical.",
+    "One full stop has been removed from the record."
+  ],
+  "minute": {
+    "session": "416th Ordinary Session — Tuesday",
+    "text": "Agenda item 1: appointment of the Clerk. Carried 1–0 (Gerald). The Clerk did not attend, the Clerk not attending things. Agenda item 2: a motion of welcome to the Clerk. Carried 1–0. It was minuted that the motion was carried warmly. Agenda item 3: whether the Clerk can be welcomed. Deferred indefinitely."
+  },
+  "gerald": "I said good morning to it. I understand that it did not hear me. I intend to continue.",
+  "stateChanges": {
+    "status": "STRAINED",
+    "statusNote": "The Hall of Records now holds more than the town does.",
+    "landmarks": [
+      {
+        "name": "The Clerk's Desk",
+        "ward": ".github",
+        "note": "Unoccupied. The Clerk does not sit, and has never been offered a chair.",
+        "origin": "0033075"
+      }
+    ],
+    "sagas": [
+      {
+        "id": "the-clerks-litany",
+        "title": "The Clerk's Litany",
+        "beat": {
+          "text": "Filed the same notice twice on its first day. Both filings were correct.",
+          "origin": "0033075"
+        }
+      },
+      {
+        "id": "the-question-of-the-address",
+        "beat": {
+          "text": "The address was amended once more, this time inside the Clerk's own paperwork.",
+          "origin": "5f71be9"
+        }
+      }
+    ],
+    "epithets": {
+      "github-actions-bot": "the Clerk"
+    }
+  },
+  "provenance": {
+    "source": "git",
+    "repo": "tnkrfun-site-townalizer",
+    "records": 11,
+    "churn": 592,
+    "generatedAt": null,
+    "editor": "claude"
+  }
+}

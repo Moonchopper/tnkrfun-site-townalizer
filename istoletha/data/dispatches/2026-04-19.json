@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "date": "2026-04-19",
+  "issue": 7,
+  "headline": "Fourteen Structures Demolished; Three Territories Annexed The Same Afternoon",
+  "standfirst": "The whole of the amusements quarter is levelled. Its occupants are not rehoused. They are annexed, which the Office has been assured is a different thing.",
+  "notices": [
+    {
+      "no": "11-066",
+      "title": "Demolition — The Amusements Quarter",
+      "body": "Fourteen structures upon the Public Grounds were demolished in the course of a single afternoon, among them the Breeder's Yard, the market, and the training ground, all of which were raised within living memory and none of which had been visited. Thirteen thousand and eight units of material were removed from the site. The Office has satisfied itself that the material went somewhere. The Office has not established where, and has closed the file.",
+      "origin": "2baf645",
+      "truth": {
+        "id": "2baf645",
+        "actor": "David Morgan",
+        "title": "chore: remove game directories (moving to submodules)",
+        "kind": "demolition",
+        "churn": 13008,
+        "files": 14,
+        "wards": [
+          "site"
+        ],
+        "timestamp": "2026-04-19T23:46:04-04:00"
+      }
+    },
+    {
+      "no": "11-067",
+      "title": "Annexation",
+      "body": "Three territories, formerly parts of this town, are now territories of this town under an arrangement the Office does not fully understand. They are governed elsewhere. They report here. They retain their own affairs, their own hours, and their own histories, and they send word when it suits them. The Office has been asked not to look into where elsewhere is, and the Office, which has never in its history looked into anything, has agreed.",
+      "origin": "372f3a8",
+      "truth": {
+        "id": "372f3a8",
+        "actor": "David Morgan",
+        "title": "chore: add games as submodules",
+        "kind": "annexation",
+        "churn": 12,
+        "files": 4,
+        "wards": [
+          "(root)",
+          "site"
+        ],
+        "timestamp": "2026-04-19T23:46:20-04:00"
+      }
+    },
+    {
+      "no": "11-068",
+      "title": "The Treaty",
+      "body": "A treaty was ratified to give effect to the foregoing. The parties were the town and the town. Neither party attended. The instrument was signed, witnessed, and filed within the minute, and the Office regards it as among the most efficient proceedings it has ever conducted.",
+      "origin": "983521f",
+      "truth": {
+        "id": "983521f",
+        "actor": "David Morgan",
+        "title": "Merge remote-tracking branch 'origin/main'",
+        "kind": "treaty",
+        "churn": 0,
+        "files": 0,
+        "wards": [],
+        "timestamp": "2026-04-19T23:47:19-04:00"
+      }
+    }
+  ],
+  "ticker": [
+    "The amusements quarter has been demolished in full.",
+    "Thirteen thousand units of material have gone somewhere.",
+    "Three territories annexed. They govern themselves and write to us.",
+    "The ground where the Breeder's Yard stood is level and quiet."
+  ],
+  "minute": {
+    "session": "420th Ordinary Session — Tuesday",
+    "text": "Agenda item 1: the demolition. Moved that the town record its regret. Moved that the town record that regret is not within its competence. Both motions carried 1–0 (Gerald), the minutes to reflect neither. Agenda item 2: the annexed territories. Welcomed in absentia."
+  },
+  "gerald": "I walked the ground where the yard had been. It is level now, and very well drained. They did the work properly. They always do the work properly. That is not the part I mind.",
+  "stateChanges": {
+    "status": "UNSETTLED",
+    "statusNote": "Fourteen structures stood here on Friday. The ground is level and very well drained.",
+    "landmarks": [
+      {
+        "name": "The Vacant Lots",
+        "ward": "site",
+        "note": "Fourteen structures stood here. Nothing does now. The drainage is excellent.",
+        "origin": "2baf645"
+      }
+    ],
+    "sagas": [
+      {
+        "id": "the-annexed-territories",
+        "title": "The Annexed Territories",
+        "beat": {
+          "text": "Three territories annexed. They govern themselves, keep their own records, and write when it suits them.",
+          "origin": "372f3a8"
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "source": "git",
+    "repo": "tnkrfun-site-townalizer",
+    "records": 4,
+    "churn": 14920,
+    "generatedAt": null,
+    "editor": "claude"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "date": "2026-05-05",
+  "issue": 8,
+  "headline": "The Territories Report; The Clerk Answers Each In Turn",
+  "standfirst": "Four dispatches arrive from the annexed territory of Tinker Tides. Four notices are filed in reply. Sixteen units of material change hands in the whole of the day.",
+  "notices": [
+    {
+      "no": "11-069",
+      "title": "Dispatches From the Territories",
+      "body": "Four reports were received from the annexed territory of Tinker Tides. They concern the fitting of a cabinet, the installation of an indicator, the construction of an engine for the simulation of returns, and the removal of a feature the Office did not know existed and cannot now confirm ever did. Each report was accepted without inspection. The Office lacks an inspector. The Office has lacked an inspector since 1994 and has arranged its procedures accordingly.",
+      "origin": "83ba39a",
+      "truth": {
+        "id": "83ba39a",
+        "actor": "David Morgan",
+        "title": "Bump tinker-tides submodule: cabinet, responsive layout, line indicator",
+        "kind": "annexation",
+        "churn": 2,
+        "files": 1,
+        "wards": [
+          "site"
+        ],
+        "timestamp": "2026-05-05T01:19:38-04:00"
+      }
+    },
+    {
+      "no": "11-070",
+      "title": "The Clerk, In Reply",
+      "body": "The Clerk filed four notices, one against each report, at the moment each report arrived. It has now filed the same notice on more occasions than this town has received visitors, and the Office wishes to be clear that this comparison is not intended unkindly, and that the Office has checked the figure twice.",
+      "origin": "b438bd4",
+      "truth": {
+        "id": "b438bd4",
+        "actor": "github-actions[bot]",
+        "title": "ci: update deployment to",
+        "kind": "filing",
+        "churn": 2,
+        "files": 1,
+        "wards": [
+          "manifests"
+        ],
+        "timestamp": "2026-05-05T19:42:28Z"
+      }
+    }
+  ],
+  "ticker": [
+    "Four reports received from the territory of Tinker Tides.",
+    "One feature has been removed. Nobody is certain it was there.",
+    "The Clerk has replied to each report in turn, identically.",
+    "Sixteen units of material moved today, in total."
+  ],
+  "minute": {
+    "session": "421st Ordinary Session — Tuesday",
+    "text": "Agenda item 1: the reports from the territories. Received. Agenda item 2: whether the Office should reply in its own hand rather than leave the matter to the Clerk. It was observed that the Clerk had already replied, four times, before the motion could be put. Motion withdrawn, with thanks."
+  },
+  "gerald": "The territories write to us and the Clerk writes back before I have finished reading. I do not mind. I have told myself that I do not mind, on a number of occasions now.",
+  "stateChanges": {
+    "status": "ROUTINE",
+    "statusNote": "Sixteen units of material moved today. The Office regards this as a full day.",
+    "sagas": [
+      {
+        "id": "the-annexed-territories",
+        "beat": {
+          "text": "Four reports from Tinker Tides, accepted without inspection. The Office has no inspector.",
+          "origin": "83ba39a"
+        }
+      },
+      {
+        "id": "the-clerks-litany",
+        "beat": {
+          "text": "Answered each report the instant it arrived. Has now filed more notices than the town has had visitors.",
+          "origin": "b438bd4"
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "source": "git",
+    "repo": "tnkrfun-site-townalizer",
+    "records": 8,
+    "churn": 16,
+    "generatedAt": null,
+    "editor": "claude"
+  }
+}
