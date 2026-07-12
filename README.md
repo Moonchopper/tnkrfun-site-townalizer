@@ -38,8 +38,12 @@ sources/      adapters: git, journal  → normalised Records
 lib/surveyor  deterministic: Records  → town facts (wards, kinds, churn, decay)
 lib/state     facts advance the town; the agent may only add flavour, and must cite
 lib/validate  refuses any claim the history does not support
-cli.mjs       days | dossier | apply | rebuild | status
+cli.mjs       days | dossier | apply | rebuild | bundle | status
 ```
+
+**[docs/how-it-works.md](docs/how-it-works.md)** is the full tour: the pipeline, what is
+truth and what is derived, exactly where an LLM is allowed to touch anything, and an honest
+list of what is still weak.
 
 An agent never sees the repository. It sees a **dossier** (the surveyed facts of one day,
 plus the town as it stood the night before) and writes a **dispatch**. Everything factual
