@@ -314,11 +314,13 @@ footer .legal a{color:#c8d4e6}
 .trail button:hover{text-decoration:underline}
 .trail button[disabled]{color:var(--ink);font-weight:bold;cursor:default;text-decoration:none}
 .trail .clear{
-  margin-left:auto;border:1px solid var(--rule);background:none;cursor:pointer;
+  border:1px solid var(--rule);background:none;cursor:pointer;
   font:bold .6rem Verdana,sans-serif;letter-spacing:.12em;text-transform:uppercase;
   color:var(--muted);padding:2px 8px;
 }
 .trail .clear:hover{color:var(--navy);border-color:var(--navy);background:#f4f1e6}
+.trail #trailCopy{margin-left:auto}
+.trail #trailCopy[data-done=true]{color:var(--green);border-color:var(--green);background:#e2efe6}
 
 /* ── Related records ──
    One record may be a landmark, a line in a chronicle, and a notice all at once.
@@ -329,8 +331,11 @@ footer .legal a{color:#c8d4e6}
    *across* it. Nothing moves when it lights up; only the colour changes. */
 .lmk-list li[data-rel]{cursor:pointer}
 .lmk-list li[data-rel]:hover b{text-decoration:underline}
-.rel-lit{background:#fff5d6}
-.chron li.rel-lit,.lmk-list li.rel-lit{border-left-color:var(--gold)}
+.rel-lit,.rel-pin{background:#fff5d6}
+.chron li.rel-lit,.lmk-list li.rel-lit,
+.chron li.rel-pin,.lmk-list li.rel-pin{border-left-color:var(--gold)}
+/* pinned by a link, rather than lit by a passing cursor — it stays */
+.chron li.rel-pin{box-shadow:2px 2px 0 rgba(0,0,0,.05)}
 .rec-notice.rel-lit{
   border-left-color:var(--gold);
   box-shadow:2px 2px 0 rgba(0,0,0,.05);
@@ -638,6 +643,7 @@ footer .legal a{color:#c8d4e6}
   <div class="container">
     <span class="lbl">Route Slip</span>
     <ol id="trailSteps"></ol>
+    <button type="button" class="clear" id="trailCopy">Copy link</button>
     <button type="button" class="clear" id="trailClear">Close</button>
   </div>
 </nav>
@@ -1259,6 +1265,60 @@ function wireRel(node,sha){
   return node;
 }
 
+/* ── deep links ───────────────────────────────────────────────────────────
+   Every view the reader can reach is addressable, so it can be sent to someone
+   else, bookmarked, or survive a refresh. The hash carries it — the site is
+   static, and a hash needs no server to route it.
+
+     #/issue/2026-04-19            an issue
+     #/issue/2026-04-19/11-066     that issue, with one notice flagged
+     #/ward/site                   a ward file
+     #/ward/site/2baf645           that ward, with one record of its chronicle shown
+
+   Plain anchors (#home, #record, #subbasement) are left to the browser: a route
+   is anything beginning "#/", and nothing else is. */
+const enc=encodeURIComponent, dec=decodeURIComponent;
+let ignoreHash=false;
+
+function setHash(h){
+  if(location.hash===h)return;
+  ignoreHash=true;                 // our own write; do not re-navigate on it
+  location.hash=h;
+  setTimeout(()=>{ignoreHash=false;},0);
+}
+
+function parseHash(){
+  const h=location.hash;
+  if(!h.startsWith('#/'))return null;
+  const p=h.slice(2).split('/');
+  if(p[0]==='issue'&&p[1])return {kind:'issue',date:dec(p[1]),no:p[2]?dec(p[2]):null};
+  if(p[0]==='ward' &&p[1])return {kind:'ward', id:dec(p[1]),sha:p[2]?dec(p[2]):null};
+  return null;
+}
+
+async function applyRoute(r){
+  if(!r)return;
+  if(r.kind==='issue'){
+    await showDispatch(r.date,r.no||undefined,{track:false}).catch(()=>{});
+    const d=cache.get(r.date);
+    if(r.no&&d){
+      setTrail([{kind:'notice',date:r.date,no:r.no,label:'Issue #'+d.issue+' №'+r.no}]);
+    }
+    return;
+  }
+  const w=state.wards[r.id];
+  if(!w)return;
+  setTrail([{kind:'ward',id:r.id,label:'Ward: '+w.name}]);
+  if(r.sha)revealRecord(r.id,r.sha,{track:false});
+  else selectWard(r.id,{track:false});
+}
+
+addEventListener('hashchange',()=>{
+  if(ignoreHash)return;            // a link we wrote ourselves
+  const r=parseHash();
+  if(r)applyRoute(r);              // back/forward through the reader's own path
+});
+
 /* ── the route slip ───────────────────────────────────────────────────────
    The reader's path through the history, so they can walk back out of it. */
 let trail=[];
@@ -1285,7 +1345,11 @@ function renderTrail(){
   });
 }
 
-function setTrail(steps){ trail=steps; renderTrail(); }
+function setTrail(steps){
+  trail=steps;
+  renderTrail();
+  if(!steps.length)clearHash();   // no route left to share
+}
 function pushTrail(step){ trail=[...trail,step]; renderTrail(); }
 
 function gotoStep(i){
@@ -1298,14 +1362,21 @@ function gotoStep(i){
 }
 
 /* Open a ward and put one particular record of its chronicle in front of the reader. */
-function revealRecord(wardId,sha){
-  selectWard(wardId,{track:false});
+function revealRecord(wardId,sha,opts={}){
+  // track:false always — every caller of revealRecord has already decided what the
+  // route slip should say, and selectWard would otherwise reset it to just the ward.
+  // keepHash: let selectWard rebuild the file without writing the ward-only address
+  // over the more specific one we are about to set.
+  selectWard(wardId,{track:false,keepHash:true});
+  setHash('#/ward/'+enc(wardId)+'/'+enc(sha));
   requestAnimationFrame(()=>{
     const row=document.querySelector('#wfBody .chron li[data-rel="'+CSS.escape(sha)+'"]');
     if(!row)return;
     row.scrollIntoView({behavior:reducedMotion()?'auto':'smooth',block:'center'});
-    lightRel(sha,true);
-    setTimeout(()=>lightRel(sha,false),2200);
+    // Pinned, not flashed. Somebody may have opened this link an hour after it was
+    // sent to them; the record they were pointed at should still be lit when they
+    // get here. Cleared when the ward file is next rebuilt.
+    row.classList.add('rel-pin');
   });
 }
 
@@ -1393,10 +1464,16 @@ function noticeEl(n,date){
  *                            when the reader followed a record here from a ward file.
  * @param {object} [opts]     {track:false} when re-entering from the route slip, so
  *                            walking back does not append to the path you walked.
+ *                            {boot:true} on first render, so an unvisited page keeps
+ *                            a clean URL instead of announcing where it landed.
  */
 async function showDispatch(date,focusNo,opts={}){
   let d=cache.get(date);
   if(!d){ d=await get('dispatches/'+date+'.json'); cache.set(date,d); }
+
+  if(!opts.boot){
+    setHash(focusNo?'#/issue/'+enc(date)+'/'+enc(focusNo):'#/issue/'+enc(date));
+  }
 
   $('recordEmpty').hidden=true;
   $('latestDispatch').hidden=false;
@@ -1596,6 +1673,7 @@ function selectWard(id,opts={}){
   // Opening a ward from the map starts a fresh route; re-entering it from the
   // route slip does not.
   if(opts.track!==false)setTrail([{kind:'ward',id,label:'Ward: '+w.name}]);
+  if(!opts.keepHash)setHash('#/ward/'+enc(id));
 
   for(const r of document.querySelectorAll('#surveySvg .plot')){
     r.setAttribute('data-sel',String(r.parentNode.dataset.ward===id));
@@ -1729,6 +1807,48 @@ function selectWard(id,opts={}){
 function closeWard(){
   $('wardFile').hidden=true;
   for(const r of document.querySelectorAll('#surveySvg .plot'))r.setAttribute('data-sel','false');
+  clearHash();
+}
+
+/* Put the address back to nothing, without leaving a bare "#" behind. */
+function clearHash(){
+  if(!location.hash.startsWith('#/'))return;
+  ignoreHash=true;
+  try{
+    history.replaceState(null,'',location.pathname+location.search);
+  }catch(e){
+    location.hash='';   // file:// sometimes refuses replaceState
+  }
+  setTimeout(()=>{ignoreHash=false;},0);
+}
+
+/* The address bar already holds the shareable link; this just saves the reader
+   from having to go and get it. */
+function copyLink(){
+  const btn=$('trailCopy');
+  const done=ok=>{
+    btn.textContent=ok?'Copied':'Press Ctrl+L';
+    btn.dataset.done=String(ok);
+    setTimeout(()=>{btn.textContent='Copy link';btn.dataset.done='false';},1800);
+  };
+  const url=location.href;
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(()=>done(true),()=>fallback(url,done));
+    return;
+  }
+  fallback(url,done);
+}
+function fallback(url,done){
+  try{
+    const ta=el('textarea');
+    ta.value=url;
+    ta.style.cssText='position:fixed;top:-9999px;opacity:0';
+    document.body.append(ta);
+    ta.select();
+    const ok=document.execCommand('copy');
+    ta.remove();
+    done(ok);
+  }catch(e){ done(false); }
 }
 
 function renderRolls(){
@@ -1819,7 +1939,7 @@ function applyTownStatus(){
   try{
     applyTownName();
     renderArchive();
-    await showDispatch(index.dispatches[0].date);
+    await showDispatch(index.dispatches[0].date,undefined,{boot:true});
     renderSurvey();
     renderRolls();
     renderSagas();
@@ -1832,6 +1952,10 @@ function applyTownStatus(){
       if(!$('wardFile').hidden)closeWard();
       setTrail([]);
     });
+    $('trailCopy').addEventListener('click',copyLink);
+
+    // Somebody sent this reader a link. Take them where it points.
+    await applyRoute(parseHash());
   }catch(e){
     /* a partial town is still a town */
   }
