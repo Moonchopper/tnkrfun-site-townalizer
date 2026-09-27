@@ -1,0 +1,4 @@
+{
+  "name": "Istoletha Town",
+  "run": ["npx", "-y", "http-server", "{dir}/istoletha", "-p", "8030", "-c-1", "-o"]
+}
