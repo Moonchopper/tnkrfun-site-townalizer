@@ -97,6 +97,13 @@ Use the default `web` service while writing dispatches: publishing one only rewr
 under `istoletha/data/`, so a browser refresh is enough — no rebuild. The `prod` profile
 builds the actual `Dockerfile` image, for when you care whether the thing that ships works.
 
+## Play-testing a branch
+
+`.claude/review-launcher.json` tells the workbench's
+[review launcher](https://github.com/Moonchopper/claude-workbench/tree/main/review-launcher)
+how to run any branch: it serves that branch's `istoletha/` with `npx http-server` on
+<http://localhost:8030> and opens the browser. Needs Node on the PATH.
+
 ## Sharing it
 
 The whole town fits in one file. `bundle` inlines `town-state.json` and every dispatch as
